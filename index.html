@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shubham Malpani, Data Engineer &amp; Architect</title>
+<meta name="description" content="Shubham Malpani. Data engineer and architect in New York. I build governed data platforms and production AI for professional services firms.">
+<meta property="og:title" content="Shubham Malpani, Data Engineer &amp; Architect">
+<meta property="og:description" content="Shubham Malpani. Data engineer and architect in New York. I build governed data platforms and production AI for professional services firms.">
+<meta property="og:image" content="assets/portrait.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shubhammalpani.com">
+<meta name="theme-color" content="#071D23">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23071D23'/%3E%3Crect x='10' y='10' width='12' height='12' fill='%23D9A13B' transform='rotate(45 16 16)'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#0C272E;
+    --ink-deep:#071D23;
+    --paper:#F6F1E4;
+    --paper-warm:#EFE7D3;
+    --sage:#E3E9DC;
+    --text-dark:#24363B;
+    --text-soft:#51625F;
+    --text-pale:#C9D4CE;
+    --text-faint:#A8BDB5;
+    --gold:#D9A13B;
+    --gold-deep:#9A6414;
+    --gold-ink:#7F520C;
+    --teal-mid:#33655F;
+    --ochre:#F2E6CC;
+    --ochre-card:#F7EEDA;
+    --aubergine:#0E2F2A;
+    --aubergine-text:#B5CCC6;
+    --bronze:#B08954;
+    --silver:#9FB0B2;
+    --serif:"Hoefler Text", Baskerville, "Palatino Linotype", Palatino, Georgia, serif;
+    --sans:-apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Helvetica, Arial, sans-serif;
+    --mono:"SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ink);color:var(--text-dark);font-family:var(--sans);line-height:1.6;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.12;margin:0;text-wrap:balance}
+  p{margin:0 0 1em}
+  a{color:inherit}
+  button{font:inherit;cursor:pointer}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+  section{scroll-margin-top:84px}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:40px}
+  .sec-head .eyebrow{color:var(--gold-ink)}
+  .sec-head h2{font-size:clamp(1.9rem,4vw,2.7rem)}
+
+  .skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:var(--gold);color:var(--ink-deep);padding:12px 24px;font-family:var(--mono);font-size:.82rem;font-weight:600;text-decoration:none;border-radius:0 0 4px 0}
+  .skip-link:focus{left:0}
+
+  /* ============ NAV ============ */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,box-shadow .3s;background:transparent}
+  .nav.scrolled{background:rgba(7,29,35,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(159,176,178,.2)}
+  .nav-inner{max-width:var(--wrap);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .nav-name{font-family:var(--serif);font-size:1.05rem;color:var(--paper);text-decoration:none;letter-spacing:.01em}
+  .nav-toggle{display:none;background:none;border:none;color:var(--text-pale);padding:8px}
+  .nav-links{display:flex;align-items:center;gap:6px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+  .nav-links a{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-pale);text-decoration:none;padding:8px 10px;border-radius:3px;transition:color .2s}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-links a.nav-contact{background:var(--gold);color:var(--ink-deep);padding:8px 16px;border-radius:999px;font-weight:600}
+  .nav-links a.nav-contact:hover{background:#E8B558;color:var(--ink-deep)}
+  @media(max-width:720px){
+    .nav-toggle{display:block}
+    .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(7,29,35,.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding:16px 24px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:14px 0;border-bottom:1px solid rgba(217,161,59,.12);font-size:.72rem}
+    .nav-links a.nav-contact{margin-top:10px;text-align:center;border-bottom:0}
+  }
+
+  /* ============ HERO ============ */
+  .hero{position:relative;min-height:100vh;min-height:100svh;background:linear-gradient(180deg,var(--ink) 0%,var(--ink) 70%,var(--ink-deep) 100%);display:flex;align-items:center;overflow:hidden}
+  #sky{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+  .hero-arc{position:absolute;top:-8%;left:46%;width:600px;height:600px;max-width:80vw;max-height:80vw;pointer-events:none;z-index:1}
+  .hero-inner{position:relative;z-index:2;max-width:var(--wrap);margin:0 auto;padding:120px 24px 90px;width:100%;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+  .hero-text{min-width:0}
+  .hero .eyebrow{color:var(--gold);margin-bottom:22px;display:block;animation:rise .8s .1s cubic-bezier(.2,.7,.2,1) both}
+  .hero h1{font-size:clamp(2.9rem,8.5vw,6rem);color:var(--paper);letter-spacing:-.01em}
+  .hero h1 .nw{display:inline-block;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero h1 .nw:nth-child(1){animation-delay:.22s}
+  .hero h1 .nw:nth-child(2){animation-delay:.38s}
+  .role-line{margin-top:28px;font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint);animation:rise .8s .6s cubic-bezier(.2,.7,.2,1) both}
+  .role-cycle{color:var(--gold);display:inline-block;min-width:20ch;transition:opacity .35s ease,transform .35s ease}
+  .role-cycle.out{opacity:0;transform:translateY(-8px)}
+  .role-cycle.in{opacity:1;transform:translateY(0)}
+  .hero-tag{margin-top:26px;max-width:52ch;font-family:var(--serif);font-size:clamp(1.05rem,2vw,1.3rem);color:var(--text-pale);line-height:1.5;animation:rise .8s .75s cubic-bezier(.2,.7,.2,1) both}
+  .portrait-wrap{position:relative;width:360px;height:360px;flex-shrink:0;animation:rise .9s .5s cubic-bezier(.2,.7,.2,1) both}
+  .portrait-wrap::before{content:"";position:absolute;inset:-20px;border-radius:50%;background:linear-gradient(135deg,rgba(217,161,59,.18),rgba(159,176,178,.15));z-index:0}
+  .hero-portrait{width:360px;height:360px;object-fit:cover;object-position:50% 20%;border-radius:50%;border:4px solid rgba(255,255,255,.85);box-shadow:0 8px 36px -8px rgba(217,161,59,.25),0 18px 50px -16px rgba(0,0,0,.45);position:relative;z-index:1}
+  .hero-scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:var(--text-faint);font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;animation:rise .8s 1.2s both}
+  .hero-scroll::after{content:"";display:block;width:1px;height:34px;margin:10px auto 0;background:linear-gradient(var(--gold),transparent);animation:drip 2.2s ease-in-out infinite}
+  @media(max-width:820px){
+    .hero-inner{grid-template-columns:1fr;text-align:center}
+    .portrait-wrap{width:180px;height:180px;margin:20px auto 0;order:1}
+    .portrait-wrap::before{inset:-12px}
+    .hero-portrait{width:180px;height:180px}
+    .hero-text{order:0}
+    .hero-tag{margin-left:auto;margin-right:auto}
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes drip{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+
+  /* ============ MARQUEE ============ */
+  .marquee{background:var(--ink-deep);border-top:1px solid rgba(159,176,178,.2);border-bottom:1px solid rgba(159,176,178,.2);overflow:hidden;padding:16px 0}
+  .marq-track{display:flex;width:max-content;animation:marq 38s linear infinite}
+  .marquee:hover .marq-track,.marquee:focus-within .marq-track{animation-play-state:paused}
+  .marq-list{display:flex;align-items:center;gap:0;list-style:none;margin:0;padding:0}
+  .marq-list li{font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-pale);white-space:nowrap;padding:0 18px}
+  .marq-list li::after{content:"\25C6";color:var(--text-faint);font-size:.5rem;margin-left:36px;vertical-align:middle}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ============ ABOUT ============ */
+  .about{background:var(--paper);padding:clamp(60px,8vw,90px) 0}
+  .about-copy p{font-size:1.16rem;color:var(--text-dark);max-width:58ch}
+  .about-copy p+p{margin-top:.4em}
+
+  /* ============ WORK ============ */
+  .work{background:var(--ochre);padding:clamp(60px,8vw,90px) 0}
+  .proj-tabs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px}
+  .proj-tab{background:var(--ochre-card);border:1.5px solid rgba(154,100,20,.25);border-radius:10px;padding:28px 24px;cursor:pointer;transition:border-color .25s,box-shadow .25s,background .25s;text-align:left}
+  .proj-tab:hover{border-color:var(--gold-deep)}
+  .proj-tab[aria-selected="true"]{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold);background:rgba(217,161,59,.08)}
+  .proj-tab .tab-num{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:6px}
+  .proj-tab .tab-title{font-family:var(--serif);font-size:1.2rem;color:var(--text-dark);line-height:1.3;display:block}
+  .proj-tab .tab-sub{font-size:.82rem;color:var(--text-soft);margin-top:6px;display:block}
+  @media(max-width:600px){.proj-tabs{grid-template-columns:1fr}}
+  .proj[role="tabpanel"]{display:none;padding-top:20px}
+  .proj.active{display:block}
+  .proj-copy{max-width:900px}
+  .proj-num{font-family:var(--serif);font-size:1rem;color:var(--gold-ink)}
+  .proj-cat{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-mid);border:1px solid var(--teal-mid);border-radius:999px;padding:4px 12px;display:inline-block;margin-left:14px;vertical-align:2px}
+  .proj h3{font-size:clamp(1.7rem,3.4vw,2.4rem);margin:16px 0 18px}
+  .proj-story{font-size:1.05rem;color:var(--text-soft);max-width:68ch}
+  .stats{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:30px}
+  .stat b{display:block;font-family:var(--serif);font-weight:500;font-size:2rem;color:var(--gold-deep);font-variant-numeric:tabular-nums;line-height:1}
+  .stat span{font-size:.78rem;color:var(--text-soft)}
+  .stat-sep{color:var(--gold);font-size:.55rem}
+  .proj-demo{margin-top:44px}
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* dev timeline (project 01) */
+  .dev-timeline{margin-top:40px}
+  .dev-phase{border:1px solid rgba(154,100,20,.25);border-radius:8px;margin-bottom:10px;background:var(--ochre-card);overflow:hidden}
+  .dev-phase-toggle{display:grid;grid-template-columns:auto 1fr auto;gap:2px 14px;width:100%;text-align:left;background:none;border:0;padding:18px 20px;align-items:center}
+  .dev-phase-toggle:hover .phase-title{color:var(--gold-ink)}
+  .phase-label{grid-row:1/3;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--gold-deep);align-self:start;padding-top:3px}
+  .phase-title{grid-column:2;font-family:var(--serif);font-size:1.08rem;color:var(--text-dark);line-height:1.3}
+  .phase-summary{grid-column:2;font-size:.86rem;color:var(--text-soft);line-height:1.4;margin-top:2px}
+  .dev-phase-toggle .dp-chev{grid-column:3;grid-row:1/3;align-self:center;width:20px;height:20px;color:var(--gold-deep);transition:transform .3s;flex:none}
+  .dev-phase-toggle[aria-expanded="true"] .dp-chev{transform:rotate(180deg)}
+  .dev-phase-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+  .dev-phase-panel.open{grid-template-rows:1fr}
+  .dev-phase-panel-in{overflow:hidden}
+  .dev-phase-panel-in ul{margin:0;padding:0 20px 18px 52px;list-style:none}
+  .dev-phase-panel-in li{padding:5px 0;font-size:.92rem;color:var(--text-soft);line-height:1.5;position:relative;padding-left:14px}
+  .dev-phase-panel-in li::before{content:"\00B7";position:absolute;left:0;color:var(--gold-deep);font-weight:700}
+  @media(max-width:600px){
+    .dev-phase-toggle{grid-template-columns:1fr auto;gap:4px 10px}
+    .phase-label{grid-row:auto;grid-column:1}
+    .phase-summary{grid-column:1}
+    .dev-phase-toggle .dp-chev{grid-row:1/3}
+    .dev-phase-panel-in ul{padding-left:20px}
+  }
+
+  .demo-note{margin-top:16px;font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--gold-ink)}
+
+  /* record-trace explorer (project 01) */
+  .trace-frame{background:var(--ink-deep);border:1px solid rgba(217,161,59,.25);border-radius:8px;padding:30px}
+  .arch{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+  .arch-btn{flex:1 1 150px;background:transparent;border:1px solid var(--teal-mid);border-radius:6px;padding:16px 14px;text-align:left;color:var(--text-pale);transition:border-color .2s,background .2s;position:relative}
+  .arch-btn .stage{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
+  .arch-btn .stage-name{font-family:var(--serif);font-size:1.05rem;color:var(--paper)}
+  .arch-btn[data-k="bronze"] .stage{color:var(--bronze)}
+  .arch-btn[data-k="silver"] .stage{color:var(--silver)}
+  .arch-btn[data-k="gold"] .stage{color:var(--gold)}
+  .arch-btn[data-k="ai"]{border-style:dashed;border-color:var(--gold)}
+  .arch-btn[data-k="ai"] .stage{color:var(--gold)}
+  .arch-btn:hover{background:rgba(51,101,95,.2)}
+  .arch-btn[aria-pressed="true"]{background:rgba(217,161,59,.1);border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+  .arch-detail{background:var(--ink);border:1px solid rgba(217,161,59,.18);border-radius:8px;padding:26px}
+  .arch-detail h4{font-family:var(--serif);font-weight:500;font-size:1.2rem;color:var(--gold);margin:0 0 12px}
+  .arch-detail p{color:var(--text-pale);max-width:62ch;margin:0 0 14px}
+  .arch-stat{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--text-faint)}
+  .trace-table-wrap{overflow-x:auto;margin-bottom:16px}
+  .trace-table{border-collapse:collapse;width:100%;min-width:480px;font-family:var(--mono);font-size:.74rem}
+  .trace-table th{text-align:left;color:var(--text-faint);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px 8px 0;border-bottom:1px solid rgba(217,161,59,.25)}
+  .trace-table td{padding:8px 12px 8px 0;border-bottom:1px solid rgba(140,163,155,.16);color:var(--text-pale)}
+  .trace-table tr.traced td{color:var(--gold);font-weight:600}
+  .trace-table tr.traced{background:rgba(217,161,59,.08)}
+  .trace-table tr.dup td{opacity:.5;text-decoration:line-through}
+  .row-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);border:1px solid var(--text-faint);border-radius:3px;padding:1px 5px;margin-left:6px;vertical-align:1px;text-decoration:none;display:inline-block}
+  .row-tag.warn{color:var(--gold);border-color:var(--gold)}
+  .quarantine-strip{margin:0 0 16px;padding:10px 14px;border:1px dashed var(--gold-deep);border-radius:6px;font-family:var(--mono);font-size:.68rem;letter-spacing:.02em;color:var(--text-faint);background:rgba(217,161,59,.05)}
+  .star-schema{display:block;width:100%;max-width:420px;margin:0 auto 18px}
+  .trace-chip-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:18px}
+  .trace-chip{font-family:var(--mono);font-size:.72rem;color:var(--ink-deep);background:var(--gold);border-radius:999px;padding:6px 14px}
+  .trace-jump{display:inline-block;margin-top:4px;font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(217,161,59,.4)}
+  .trace-jump:hover{border-color:var(--gold)}
+
+  /* chat demo (project 02) */
+  .chat-card{background:var(--ink-deep);border:1px solid rgba(217,161,59,.25);border-radius:10px;overflow:hidden}
+  .chat-head{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid rgba(217,161,59,.15);font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint)}
+  .chat-diamond{width:9px;height:9px;background:var(--gold);transform:rotate(45deg);display:inline-block;flex:none}
+  .chat-chips{display:flex;flex-wrap:wrap;gap:10px;padding:16px 18px;border-bottom:1px solid rgba(217,161,59,.12)}
+  .chip{background:transparent;border:1px solid var(--teal-mid);color:var(--text-pale);border-radius:999px;padding:9px 16px;font-size:.82rem;transition:border-color .2s,background .2s}
+  .chip:hover{border-color:var(--gold)}
+  .chip[aria-pressed="true"]{border-color:var(--gold);background:rgba(217,161,59,.1);color:var(--paper)}
+  .chat-thread{padding:20px 18px;display:flex;flex-direction:column;gap:16px;min-height:110px;max-height:520px;overflow-y:auto}
+  .chat-empty{color:var(--text-faint);font-family:var(--mono);font-size:.8rem}
+  .exchange{display:flex;flex-direction:column;gap:10px}
+  .bubble{border-radius:12px;padding:12px 16px;font-size:.9rem;line-height:1.5}
+  .bubble.user{align-self:flex-end;max-width:80%;background:var(--ochre);color:var(--ink);border-bottom-right-radius:3px}
+  .bubble.assistant{align-self:flex-start;max-width:92%;background:rgba(246,241,228,.04);border:1px solid rgba(217,161,59,.25);color:var(--text-pale);border-bottom-left-radius:3px}
+  .bubble.assistant .ans-num{font-family:var(--serif);font-size:1.7rem;color:var(--gold);display:block;margin-bottom:6px;line-height:1}
+  .bubble.assistant .ans-text{margin:0 0 12px}
+  .bubble.assistant table{border-collapse:collapse;width:100%;font-size:.8rem}
+  .bubble.assistant th{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);text-align:left;padding:5px 10px 5px 0;border-bottom:1px solid rgba(217,161,59,.25)}
+  .bubble.assistant td{padding:7px 10px 7px 0;border-bottom:1px solid rgba(140,163,155,.14)}
+  .bubble.assistant td:last-child{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--gold)}
+  .typing{align-self:flex-start;display:flex;gap:4px;padding:14px 16px;background:rgba(246,241,228,.04);border:1px solid rgba(217,161,59,.25);border-radius:12px;border-bottom-left-radius:3px}
+  .typing i{width:6px;height:6px;border-radius:50%;background:var(--text-faint);animation:typingBounce 1s infinite ease-in-out;display:block}
+  .typing i:nth-child(2){animation-delay:.15s}
+  .typing i:nth-child(3){animation-delay:.3s}
+  @keyframes typingBounce{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+
+  /* MCP collapsible */
+  .mcp-details{margin-top:28px;border:1px solid rgba(217,161,59,.25);border-radius:8px;padding:2px 24px;background:var(--ink-deep)}
+  .mcp-details summary{cursor:pointer;font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);padding:18px 0;list-style:none}
+  .mcp-details summary::-webkit-details-marker{display:none}
+  .mcp-details summary::before{content:"+ ";color:var(--gold)}
+  .mcp-details[open] summary::before{content:"\2212 "}
+  .mcp-body{display:grid;grid-template-columns:1fr 260px;gap:28px;padding-bottom:24px;color:var(--text-pale);font-size:.92rem;align-items:start}
+  .mcp-text p{max-width:none}
+  @media(max-width:700px){.mcp-body{grid-template-columns:1fr}}
+
+  /* ============ MORE ============ */
+  .more{background:var(--aubergine);padding:clamp(60px,8vw,90px) 0}
+  .more .sec-head .eyebrow{color:var(--gold)}
+  .more .sec-head h2{color:var(--paper)}
+  .more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .more-card{background:rgba(246,241,228,.045);border:1px solid rgba(217,161,59,.24);border-radius:6px;padding:22px 20px;cursor:pointer;transition:border-color .25s,transform .2s,box-shadow .25s}
+  .more-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px -8px rgba(0,0,0,.3)}
+  .more-num{display:block;font-family:var(--serif);font-size:1.65rem;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1.15}
+  .more-text{display:block;margin-top:8px;font-size:.88rem;color:var(--aubergine-text);line-height:1.5}
+  .more-expand{display:block;margin-top:12px;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);opacity:.5;transition:opacity .2s}
+  .more-card:hover .more-expand{opacity:1}
+  .more-panel{display:none}
+  .more-modal-overlay{position:fixed;inset:0;background:rgba(7,29,35,.82);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:40px 20px;z-index:150}
+  .more-modal-overlay[hidden]{display:none}
+  .more-modal{width:min(660px,100%);max-height:80vh;overflow-y:auto;background:var(--ink-deep);border:1px solid rgba(217,161,59,.3);border-radius:12px;position:relative;box-shadow:0 30px 70px -20px rgba(0,0,0,.6)}
+  .more-modal-close{position:absolute;top:16px;right:16px;background:none;border:0;color:var(--text-faint);font-size:1.6rem;line-height:1;padding:4px 10px;border-radius:4px;z-index:1}
+  .more-modal-close:hover{color:var(--gold)}
+  .more-modal-header{padding:36px 32px 20px}
+  .more-modal-num{font-family:var(--serif);font-size:2.6rem;color:var(--gold);display:block;line-height:1}
+  .more-modal-title{font-size:1.06rem;color:var(--text-pale);line-height:1.45;display:block;margin-top:10px;max-width:50ch}
+  .more-modal-tags{padding:0 32px 20px;display:flex;flex-wrap:wrap;gap:8px}
+  .more-modal-tags .tag{font-size:.68rem;color:var(--gold);border-color:rgba(217,161,59,.4)}
+  .more-modal-visual{margin:0 32px 20px;border:1px dashed rgba(217,161,59,.2);border-radius:8px;overflow:hidden;aspect-ratio:16/7;display:flex;align-items:center;justify-content:center;background:rgba(217,161,59,.03);color:var(--text-faint);font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+  .more-modal-visual img{width:100%;height:100%;object-fit:cover}
+  .more-modal-body{padding:0 32px 36px}
+  .more-modal-body ul{margin:0;padding:0;list-style:none}
+  .more-modal-body li{padding:10px 0;font-size:.92rem;color:var(--text-pale);line-height:1.55;padding-left:16px;position:relative;border-bottom:1px solid rgba(217,161,59,.08)}
+  .more-modal-body li:last-child{border-bottom:0}
+  .more-modal-body li::before{content:"\00B7";position:absolute;left:0;color:var(--gold);font-weight:700}
+  @media(max-width:560px){.more-modal-header{padding:28px 20px 16px}.more-modal-tags{padding:0 20px 16px}.more-modal-visual{margin:0 20px 16px}.more-modal-body{padding:0 20px 28px}}
+
+  /* metric grid (proj-02) */
+  .metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+  .metric-card{background:var(--ink-deep);border:1px solid rgba(217,161,59,.3);border-radius:8px;padding:24px 22px}
+  .metric-card.metric-hero{grid-column:1/-1;text-align:center;background:rgba(217,161,59,.08);border-color:var(--gold)}
+  .metric-val{display:block;font-family:var(--serif);font-weight:500;font-size:2.2rem;color:var(--gold);line-height:1;margin-bottom:8px}
+  .metric-card.metric-hero .metric-val{font-size:3rem}
+  .metric-label{font-size:.86rem;color:var(--text-pale);line-height:1.4}
+  @media(max-width:480px){.metric-grid{grid-template-columns:1fr}.metric-card.metric-hero{grid-column:auto}}
+  @media(max-width:920px){.more-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.more-grid{grid-template-columns:1fr}}
+
+  /* ============ PROJECTS (hidden) ============ */
+  .projects{display:none;background:var(--paper-warm);padding:100px 0}
+
+  /* ============ TIMELINE ============ */
+  .timeline{background:var(--ink);padding:clamp(60px,8vw,90px) 0}
+  .timeline .sec-head .eyebrow{color:var(--gold)}
+  .timeline .sec-head h2{color:var(--paper)}
+  .tl{position:relative;margin:0;padding:0;list-style:none;max-width:820px}
+  .tl::before{content:"";position:absolute;left:104px;top:8px;bottom:8px;width:1.5px;background:var(--gold);opacity:.3}
+  .tl-item{position:relative;display:grid;grid-template-columns:82px 44px 1fr;align-items:start;padding:6px 0}
+  .tl-year{font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;color:var(--gold);padding-top:14px;text-align:right}
+  .tl-dot{position:relative;padding-top:19px}
+  .tl-dot::before{content:"";position:absolute;left:19px;top:20px;width:9px;height:9px;background:var(--ink);border:2px solid var(--gold);transform:rotate(45deg);border-radius:1px}
+  .tl-item.big .tl-dot::before{background:var(--gold);border-color:var(--gold-deep)}
+  .tl-body{padding:8px 0 14px}
+  .tl-title{font-family:var(--serif);font-size:1.12rem;color:var(--paper)}
+  .tl-place{font-size:.85rem;color:var(--text-pale)}
+  .tl-static{padding:10px 14px 10px 0}
+  .tl-toggle{display:flex;width:100%;align-items:baseline;justify-content:space-between;gap:14px;text-align:left;background:none;border:0;padding:10px 12px 10px 0;border-radius:4px}
+  .tl-toggle:hover .tl-title{color:var(--gold)}
+  .tl-chev{flex:none;align-self:center;width:22px;height:22px;color:var(--gold);transition:transform .3s}
+  .tl-toggle[aria-expanded="true"] .tl-chev{transform:rotate(180deg)}
+  .tl-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+  .tl-panel.open{grid-template-rows:1fr}
+  .tl-panel-in{overflow:hidden}
+  .tl-story{font-size:.95rem;color:var(--text-pale);max-width:56ch;padding:2px 0 10px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:12px}
+  .tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(217,161,59,.4);border-radius:999px;padding:3px 10px}
+  .tl-static .tl-title{color:var(--text-pale)}
+  .tl-roles{display:flex;flex-direction:column;gap:16px;margin:8px 0 14px;border-left:2px solid rgba(217,161,59,.25);padding-left:18px}
+  .tl-role-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin-bottom:4px}
+  .tl-role-date{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold);min-width:3ch}
+  .tl-role-title{font-family:var(--serif);font-size:1rem;color:var(--paper)}
+  .tl-role-co{font-size:.82rem;color:var(--text-faint)}
+  .tl-role-desc{font-size:.9rem;color:var(--text-pale);line-height:1.5;margin:0;max-width:56ch}
+  @media(max-width:600px){
+    .tl::before{left:24px}
+    .tl-item{grid-template-columns:44px 1fr}
+    .tl-year{grid-column:2;text-align:left;padding-top:0;order:0}
+    .tl-dot{grid-row:1 / span 2;grid-column:1}
+    .tl-dot::before{left:19px}
+    .tl-body{grid-column:2}
+  }
+
+  /* ============ OPINIONS ============ */
+  .opinions{background:var(--ink-deep);padding:clamp(60px,8vw,90px) 0}
+  .opinions .sec-head .eyebrow{color:var(--gold)}
+  .opinions .sec-head h2{color:var(--paper)}
+  .opinions-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:700px){.opinions-grid{grid-template-columns:1fr}}
+  .opinion-card{border:1px solid rgba(217,161,59,.24);border-radius:8px;padding:28px 26px}
+  .opinion-stmt{font-family:var(--serif);font-size:1.3rem;color:var(--gold);margin:0 0 12px}
+  .opinion-support{font-size:.92rem;color:var(--text-pale);margin:0}
+
+  /* ============ LIFE ============ */
+  .life{background:var(--ochre-card);padding:clamp(60px,8vw,90px) 0}
+  .life-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .ph{position:relative;aspect-ratio:4/5;border:1.5px dashed var(--gold-deep);border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--gold-deep);font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:repeating-linear-gradient(-45deg,transparent,transparent 14px,rgba(154,100,20,.07) 14px,rgba(154,100,20,.07) 15px);text-align:center;padding:8px}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+  .ph span{position:relative;z-index:0}
+  .life-note{margin-top:20px;font-size:.9rem;color:var(--text-soft);max-width:60ch}
+  @media(max-width:820px){.life-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:480px){.life-grid{grid-template-columns:repeat(2,1fr)}}
+
+  /* ============ CONTACT ============ */
+  .contact{background:var(--ink-deep);padding:130px 0 110px;color:var(--text-pale)}
+  .contact .eyebrow{color:var(--gold)}
+  .contact h2{color:var(--paper);font-size:clamp(2.2rem,5.5vw,3.6rem);max-width:18ch;margin:16px 0 26px}
+  .contact p{max-width:56ch;font-size:1.1rem;color:var(--text-pale)}
+  .contact .roles{color:var(--text-faint);font-size:.98rem}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:44px}
+  .cta{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-radius:999px;padding:14px 26px;border:1px solid var(--teal-mid);color:var(--text-pale);transition:border-color .2s,background .2s}
+  .cta:hover{border-color:var(--gold);color:var(--paper)}
+  .cta.primary{background:var(--gold);border-color:var(--gold);color:var(--ink-deep);font-weight:600}
+  .cta.primary:hover{background:#E8B558}
+  footer{background:var(--ink-deep);border-top:1px solid rgba(217,161,59,.15);padding:26px 0;color:var(--text-faint);font-family:var(--mono);font-size:.66rem;letter-spacing:.1em}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .cmdk-hint{color:var(--text-faint)}
+  .cmdk-key{border:1px solid rgba(217,161,59,.4);border-radius:3px;padding:1px 6px;font-family:var(--mono);color:var(--gold);margin:0 3px;font-size:.9em}
+
+  /* ============ COMMAND PALETTE ============ */
+  .cmdk-overlay{position:fixed;inset:0;background:rgba(7,29,35,.72);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);display:flex;align-items:flex-start;justify-content:center;padding:14vh 20px 20px;z-index:200}
+  .cmdk-overlay[hidden]{display:none}
+  .cmdk-panel{width:min(560px,100%);background:var(--ink-deep);border:1px solid rgba(217,161,59,.3);border-radius:10px;box-shadow:0 30px 70px -30px rgba(0,0,0,.6);overflow:hidden}
+  .cmdk-input{width:100%;box-sizing:border-box;background:transparent;border:0;border-bottom:1px solid rgba(217,161,59,.2);padding:18px 20px;font-family:var(--mono);font-size:.92rem;color:var(--paper);outline:0}
+  .cmdk-input::placeholder{color:var(--text-faint)}
+  .cmdk-results{list-style:none;margin:0;padding:8px;max-height:320px;overflow-y:auto}
+  .cmdk-results li{padding:0}
+  .cmdk-results button{width:100%;text-align:left;background:transparent;border:0;border-radius:6px;padding:12px 14px;color:var(--text-pale);font-size:.9rem;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .cmdk-results button .cmdk-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-faint)}
+  .cmdk-results button:hover,.cmdk-results button.active{background:rgba(217,161,59,.12);color:var(--paper)}
+  .cmdk-empty{padding:16px 14px;color:var(--text-faint);font-size:.85rem}
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+    .marq-track{animation:none}
+    .marquee{overflow-x:auto}
+    .reveal{opacity:1;transform:none}
+    .hero-scroll::after{animation:none}
+  }
+
+  @media print{
+    .nav,.hero-scroll,.marquee,.cmdk-overlay,.cmdk-hint,#sky,.hero-arc,canvas,.proj-demo,.chat-card,.trace-frame,.mcp-details,.portrait-wrap::before{display:none !important}
+    body{background:white;color:#222}
+    section{padding:30px 0 !important;break-inside:avoid}
+    .hero{min-height:auto;background:white}
+    .hero h1{color:#222}
+    a{color:#222;text-decoration:underline}
+  }
+</style>
+</head>
+<body>
+
+<a href="#about" class="skip-link">Skip to content</a>
+
+<nav class="nav" id="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">Shubham Malpani</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a class="nav-contact" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="hero" id="top">
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <svg class="hero-arc" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+    <circle cx="300" cy="300" r="300" fill="none" stroke="var(--gold)" stroke-opacity="0.12" stroke-width="1.5" stroke-dasharray="760 1885" stroke-dashoffset="-120"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow">Data Engineer &amp; Architect &nbsp;&middot;&nbsp; New York, NY</span>
+      <h1><span class="nw">Shubham</span> <span class="nw">Malpani</span></h1>
+      <div class="role-line">Open to <span class="role-cycle in" id="roleCycle">Senior Data Engineer</span></div>
+      <p class="hero-tag">I make data a strategic business asset. I build the governed platforms and the AI layers on top of them so that everyone in an organization, regardless of technical skill, has the information they need to do their work well and leadership has sharper decisions.</p>
+    </div>
+    <div class="portrait-wrap">
+      <img class="hero-portrait" src="assets/portrait.jpg" alt="Shubham Malpani" width="800" height="800" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,var(--teal-mid),var(--ink))';">
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">Scroll</div>
+</header>
+
+<div class="marquee" aria-label="Skills">
+  <div class="marq-track">
+    <ul class="marq-list">
+      <li>Python</li><li>PySpark</li><li>SQL</li><li>Microsoft Fabric</li><li>Azure</li><li>Terraform</li><li>Power BI</li><li>MCP servers</li><li>Claude</li><li>Medallion architecture</li><li>Data modeling</li><li>CI/CD</li>
+    </ul>
+    <ul class="marq-list" aria-hidden="true">
+      <li>Python</li><li>PySpark</li><li>SQL</li><li>Microsoft Fabric</li><li>Azure</li><li>Terraform</li><li>Power BI</li><li>MCP servers</li><li>Claude</li><li>Medallion architecture</li><li>Data modeling</li><li>CI/CD</li>
+    </ul>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">About</span><h2>The short version</h2></div>
+    <div class="about-copy">
+      <p>I'm a data engineer and architect in New York. For five years I've built the infrastructure underneath other people's dashboards: the warehouses and pipelines that determine whether a number can be trusted.</p>
+      <p>I grew up in Mumbai, did my M.S. at Syracuse, and have spent the years since building data platforms for professional services and nonprofit firms. I like owning the full lifecycle of a data problem, from the architecture decision to the team standup where someone asks why two reports show different numbers.</p>
+      <p>Outside work I cook for a crowd, box a few mornings a week, make a decent cocktail, and go to more shows than my calendar can afford.</p>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Work</span><h2>The work I'm proudest of</h2></div>
+
+    <div class="proj-tabs" role="tablist" aria-label="Projects">
+      <button class="proj-tab" role="tab" aria-selected="true" aria-controls="proj-01" id="tab-01">
+        <span class="tab-num">01 &middot; Data Platform</span>
+        <span class="tab-title">An entire data platform, from scratch.</span>
+        <span class="tab-sub">21 systems, 400+ users, 125 pipelines</span>
+      </button>
+      <button class="proj-tab" role="tab" aria-selected="false" aria-controls="proj-02" id="tab-02">
+        <span class="tab-num">02 &middot; AI + Data</span>
+        <span class="tab-title">The AI analytics layer, and the $7.6M it found.</span>
+        <span class="tab-sub">7 MCP servers, 65 tools, 1,300+ queries/week</span>
+      </button>
+    </div>
+
+    <article class="proj active reveal" id="proj-01" role="tabpanel" aria-labelledby="tab-01">
+      <div class="proj-copy">
+        <span class="proj-num">01</span><span class="proj-cat">Data Platform</span>
+        <h3>An entire data platform, from scratch.</h3>
+        <p class="proj-story">The company had a new CTO with a vision: build an enterprise technology platform for fiscal sponsorship. The centerpiece was a data warehouse to consolidate 21 disconnected source systems. There was no warehouse, no pipelines, no governance. I evaluated Fabric, Snowflake, and Databricks. Fabric won because it gave us the entire stack in one platform (notebooks, pipelines, warehouse, Power BI) within Azure. For a team that would shrink to one or two people after the build phase, operational simplicity mattered more than raw power.</p>
+        <p class="proj-story">I hired a team of 8, structured for the full scope: data engineers, DevOps, Power BI, BA, and a scrum master. We built a medallion architecture across three business domains and stood up 125 pipelines across 3 environments. The platform now serves 400+ users and runs every morning before anyone logs in.</p>
+        <div class="stats">
+          <div class="stat"><b>21+</b><span>systems</span></div>
+          <span class="stat-sep" aria-hidden="true">&#9670;</span>
+          <div class="stat"><b>400+</b><span>users</span></div>
+          <span class="stat-sep" aria-hidden="true">&#9670;</span>
+          <div class="stat"><b>98.2%</b><span>success rate</span></div>
+          <span class="stat-sep" aria-hidden="true">&#9670;</span>
+          <div class="stat"><b>125</b><span>pipelines</span></div>
+        </div>
+      </div>
+
+      <div class="dev-timeline">
+        <div class="dev-phase">
+          <button class="dev-phase-toggle" aria-expanded="false" aria-controls="devp1">
+            <span class="phase-label">01</span>
+            <span class="phase-title">Data Modeling</span>
+            <span class="phase-summary">Three months mapping how data actually flows across the business.</span>
+            <svg class="dp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="dev-phase-panel" id="devp1"><div class="dev-phase-panel-in"><ul>
+            <li>Interviewed stakeholders from CEO to operations staff to understand how each business unit thinks about data. This had never been done before.</li>
+            <li>Modeled three domains: Revenue, Cost, and Capacity. Revenue was the most complex because fiscal sponsorship and consulting recognize revenue differently. Cost was the hardest to learn (new domain for me). Capacity was the most strategically important (and eventually led to the $7.6M discovery).</li>
+            <li>Produced a Kimball-style dimensional model: 12 conformed dimensions, 10 fact tables across 4 domains.</li>
+            <li>The completed data model was the first deliverable. It gave leadership confidence that we understood the business deeply enough to build the platform.</li>
+          </ul></div></div>
+        </div>
+
+        <div class="dev-phase">
+          <button class="dev-phase-toggle" aria-expanded="false" aria-controls="devp2">
+            <span class="phase-label">02</span>
+            <span class="phase-title">Bronze Layer</span>
+            <span class="phase-summary">Extracting raw data from 21 source systems into a single lakehouse.</span>
+            <svg class="dp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="dev-phase-panel" id="devp2"><div class="dev-phase-panel-in"><ul>
+            <li>Built a config-driven PySpark framework: every source follows the same architectural pattern. Adding a new source means one notebook and a config entry, not a new codebase.</li>
+            <li>Each source has its own extraction logic (OAuth, Basic Auth, REST pagination, SOQL cursors, batch parquet), but the framework standardizes how data lands: MD5 content hashing for change detection, bidirectional schema evolution, and a 10% soft-delete safety threshold that prevents API failures from mass-deleting real data.</li>
+            <li>Parallel fetching with sequential writes (Spark isn't thread-safe), circuit breakers on high-volume APIs, and exponential backoff with retry.</li>
+            <li>21 source systems consolidated into one lakehouse: Salesforce, NetSuite, Paycor, OpenAir, HubSpot, Ignite, Active Directory, QuickBooks, Airtable, Certinia, and more.</li>
+          </ul></div></div>
+        </div>
+
+        <div class="dev-phase">
+          <button class="dev-phase-toggle" aria-expanded="false" aria-controls="devp3">
+            <span class="phase-label">03</span>
+            <span class="phase-title">Silver &amp; Gold Layers</span>
+            <span class="phase-summary">Business rules, data quality, conformed dimensions, and SCD tracking.</span>
+            <svg class="dp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="dev-phase-panel" id="devp3"><div class="dev-phase-panel-in"><ul>
+            <li>Silver applies business rules and schema contracts. Every notebook starts with a PySpark StructType definition so the shape of the data is explicit, not inferred. Rows that fail validation get marked inactive with a reason code (never deleted).</li>
+            <li>Gold is where conformed business entities live. Config-driven stored procedure generation: define the entity and its rules, the system generates the T-SQL. SCD Type 4 (current + history + audit tables) tracks every column-level change across 11 entities.</li>
+            <li>Cross-system entity resolution with 10+ ID columns per entity (Salesforce ID, NetSuite ID, OpenAir ID, etc.). Deterministic surrogate keys via SHA-256.</li>
+            <li>Post-write reconciliation on every notebook. If counts don't match, the pipeline stops. Dollar-tolerance gates on financial data ($1.00 threshold).</li>
+          </ul></div></div>
+        </div>
+
+        <div class="dev-phase">
+          <button class="dev-phase-toggle" aria-expanded="false" aria-controls="devp4">
+            <span class="phase-label">04</span>
+            <span class="phase-title">Reporting &amp; Analytics</span>
+            <span class="phase-summary">Dashboards, automated scorecards, and a KPI framework across 5 domains.</span>
+            <svg class="dp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="dev-phase-panel" id="devp4"><div class="dev-phase-panel-in"><ul>
+            <li>36 KPIs across 5 domains (Finance, Capacity, Projects, Pipeline, Workforce Planning). Pushed back when different business units wanted different formulas for the same metric and drove a single unified calculation.</li>
+            <li>15+ Power BI dashboards for C-suite and LOB leadership. Trained 20+ users across 8 workshops using live, in-progress dashboards so the sessions doubled as feedback rounds.</li>
+            <li>Automated report builders (6,400+ lines of Python): utilization scorecards, gross profit reports, and revenue scorecards. Each has built-in reconciliation gates; reports won't publish if the numbers don't tie.</li>
+            <li>Event-driven financial reporting: the pipeline checks NetSuite's accounting period table nightly. When it detects a new closed month, everything downstream triggers automatically. Reporting turnaround went from 5-6 days to same-day. No human handoff needed.</li>
+          </ul></div></div>
+        </div>
+      </div>
+
+      <div class="proj-demo">
+        <div class="trace-frame">
+          <div class="arch" role="group" aria-label="Medallion stages, tracing one record">
+            <button class="arch-btn" data-k="bronze" aria-pressed="true"><span class="stage">Stage 1</span><span class="stage-name">Bronze</span></button>
+            <button class="arch-btn" data-k="silver" aria-pressed="false"><span class="stage">Stage 2</span><span class="stage-name">Silver</span></button>
+            <button class="arch-btn" data-k="gold" aria-pressed="false"><span class="stage">Stage 3</span><span class="stage-name">Gold</span></button>
+            <button class="arch-btn" data-k="ai" aria-pressed="false"><span class="stage">Stage 4</span><span class="stage-name">Ask it anything</span></button>
+          </div>
+
+          <div class="arch-detail" id="traceDetail" aria-live="polite">
+            <div class="trace-panel" data-panel="bronze">
+              <h4>Bronze: raw, as it landed</h4>
+              <div class="trace-table-wrap">
+                <table class="trace-table">
+                  <thead><tr><th>source</th><th>client_name</th><th>hours</th><th>rate</th><th>_content_hash</th></tr></thead>
+                  <tbody>
+                    <tr class="traced"><td>salesforce</td><td>aCme corp</td><td>42.0</td><td>NULL</td><td>a3f9&hellip;</td></tr>
+                    <tr class="dup"><td>salesforce</td><td>Acme Corp <span class="row-tag">dup</span></td><td>42.0</td><td>NULL</td><td>a3f9&hellip;</td></tr>
+                    <tr><td>ramp</td><td>Meridian LLC</td><td>16</td><td>210</td><td>77c1&hellip;</td></tr>
+                    <tr><td>paycor</td><td>northstar health</td><td>-8 <span class="row-tag warn">flag</span></td><td>185</td><td>e04d&hellip;</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>145 tables land here exactly as the source systems sent them. Nothing is edited. Every row gets a content hash, so the next run only moves what actually changed.</p>
+              <div class="arch-stat">145 tables &middot; 21 sources &middot; hash-based change detection</div>
+            </div>
+
+            <div class="trace-panel" data-panel="silver" hidden>
+              <h4>Silver: cleaned and conformed</h4>
+              <div class="trace-table-wrap">
+                <table class="trace-table">
+                  <thead><tr><th>source</th><th>client_name</th><th>hours</th><th>rate</th><th>_content_hash</th></tr></thead>
+                  <tbody>
+                    <tr class="traced"><td>salesforce</td><td>Acme Corp</td><td>42.0</td><td>165</td><td>a3f9&hellip;</td></tr>
+                    <tr><td>ramp</td><td>Meridian LLC</td><td>16.0</td><td>210</td><td>77c1&hellip;</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="quarantine-strip"><strong>northstar health</strong> &middot; quarantined &middot; negative hours &middot; rule 7 of 10</div>
+              <p>19 conformed tables with 10 data-quality rules on the way in. Bad rows get quarantined with a reason code instead of silently dropped, so nothing disappears without a trace.</p>
+              <div class="arch-stat">19 tables &middot; 10 data-quality rules &middot; quarantine, not deletion</div>
+            </div>
+
+            <div class="trace-panel" data-panel="gold" hidden>
+              <h4>Gold: analytics-ready</h4>
+              <svg class="star-schema" viewBox="0 0 400 260" role="img" aria-label="Star schema: FactUtilization at center, connected to DimClient, DimEmployee, and DimDate">
+                <line x1="200" y1="130" x2="200" y2="55" stroke="var(--teal-mid)" stroke-width="1"></line>
+                <line x1="200" y1="130" x2="70" y2="200" stroke="var(--teal-mid)" stroke-width="1"></line>
+                <line x1="200" y1="130" x2="335" y2="200" stroke="var(--teal-mid)" stroke-width="1"></line>
+                <rect x="150" y="20" width="100" height="40" rx="4" fill="none" stroke="var(--silver)" stroke-width="1.4"></rect>
+                <text x="200" y="44" text-anchor="middle" fill="var(--text-pale)" font-family="var(--mono)" font-size="11">DimDate</text>
+                <rect x="135" y="105" width="130" height="50" rx="4" fill="rgba(217,161,59,.14)" stroke="var(--gold)" stroke-width="1.6"></rect>
+                <text x="200" y="135" text-anchor="middle" fill="var(--gold)" font-family="var(--mono)" font-size="11" font-weight="600">FactUtilization</text>
+                <rect x="10" y="180" width="120" height="40" rx="4" fill="none" stroke="var(--silver)" stroke-width="1.4"></rect>
+                <text x="70" y="204" text-anchor="middle" fill="var(--text-pale)" font-family="var(--mono)" font-size="11">DimClient</text>
+                <rect x="270" y="180" width="130" height="40" rx="4" fill="none" stroke="var(--silver)" stroke-width="1.4"></rect>
+                <text x="335" y="204" text-anchor="middle" fill="var(--text-pale)" font-family="var(--mono)" font-size="11">DimEmployee</text>
+              </svg>
+              <div class="trace-chip-row">
+                <span class="trace-chip">Acme Corp</span><span class="trace-chip">utilization 71%</span><span class="trace-chip">GP 34%</span>
+              </div>
+              <p>70+ tables shaped for the business: 12 dimensions and 10 facts, plus the history audit and delta tables behind them, with full lineage from source system to dashboard. This is what 400+ people report from.</p>
+              <div class="arch-stat">70+ tables &middot; 12 dimensions, 10 facts &middot; full lineage</div>
+            </div>
+
+            <div class="trace-panel" data-panel="ai" hidden>
+              <h4>Ask it anything: the bridge</h4>
+              <p>Every layer above exists so this one can work: an AI analytics layer where anyone can ask a question about the data and get a real answer backed by SQL, without writing any themselves. That's the next project.</p>
+              <div class="arch-stat">7 MCP servers &middot; 65 tools &middot; natural language in, SQL out</div>
+              <a class="trace-jump" href="#proj-02">See it answer questions below &darr;</a>
+            </div>
+          </div>
+        </div>
+        <p class="demo-note">Sample data. The traced record is highlighted in gold.</p>
+      </div>
+    </article>
+
+    <article class="proj reveal" id="proj-02" role="tabpanel" aria-labelledby="tab-02">
+      <div class="proj-copy">
+        <span class="proj-num">02</span><span class="proj-cat">AI + Data</span>
+        <h3>The AI analytics layer, and the $7.6M it found.</h3>
+        <p class="proj-story">Once the warehouse was running, the next problem was access. Non-technical leaders (the CFO, LOB heads) still couldn't get answers without asking the data team. Dashboards handled standard questions, but anything ad-hoc required someone who knew SQL.</p>
+        <p class="proj-story">I built an AI analytics layer on top of the warehouse using MCP servers and Claude. One server per data mart, each with access to its domain's schema and business context. Users ask questions in natural language, the model writes the SQL, and the answer comes back with the data behind it. The system handles 1,300+ queries a week at a 94.5% success rate.</p>
+        <p class="proj-story">The $7.6M came from asking a question nobody had thought to ask: how much billable capacity was the firm leaving on the table? The number was high enough that I assumed the AI was wrong. I validated everything by hand in raw SQL. The numbers held. The org used that data to reallocate staff and secure about $3M in new contracts.</p>
+        <div class="metric-grid">
+          <div class="metric-card metric-hero">
+            <span class="metric-val">$7.6M</span>
+            <span class="metric-label">Unrealized billable capacity identified by AI analytics</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-val">$3M</span>
+            <span class="metric-label">In new contracts secured from the insight</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-val">94.5%</span>
+            <span class="metric-label">Query success rate across 1,300+ weekly queries</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-val">65</span>
+            <span class="metric-label">Tools across 7 MCP servers</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-demo">
+        <div class="chat-card">
+          <div class="chat-head"><span class="chat-diamond" aria-hidden="true"></span><span>ask-the-data</span></div>
+          <div class="chat-chips" role="group" aria-label="Sample questions">
+            <button class="chip" data-q="util" aria-pressed="false">Who's underutilized this quarter?</button>
+            <button class="chip" data-q="rev" aria-pressed="false">How much did we close last month?</button>
+            <button class="chip" data-q="margin" aria-pressed="false">Which projects are losing money?</button>
+          </div>
+          <div class="chat-thread" id="chatThread" aria-live="polite">
+            <p class="chat-empty">Pick a question above. The answer shows up here, the way it did for the people who used the real thing.</p>
+          </div>
+        </div>
+        <p class="demo-note">Sample data, running in your browser. The real version sat on the live warehouse, behind the company's own auth.</p>
+
+        <details class="mcp-details">
+          <summary>How it actually works</summary>
+          <div class="mcp-body">
+            <div class="mcp-text">
+              <p><strong>Architecture.</strong> One MCP server per data mart: utilization, revenue, HR, contracts, and so on. Each server knows its domain's schema and the business context behind the columns (what "LOB_A" maps to in the real org, which join keys to use, which names map to which entities). Claude connects to all of them and routes each question to the right server.</p>
+              <p><strong>Two-tool pattern.</strong> Each server started with six tools. Usage logs showed that Claude almost always did two things: check the schema, then write SQL. The other four added token overhead without value. Cutting to two tools per server made the model more accurate, not less.</p>
+              <p><strong>Security.</strong> Every query passes through 8 validation layers before it touches the warehouse: input validation, read-only enforcement, table whitelisting, CTE-aware parsing, automatic row limits, query timeouts, read-only tool annotations, and hand-authored schema context. The model can read data. It cannot write, delete, or access tables outside its whitelist.</p>
+              <p><strong>Observability.</strong> Three-tier logging: a markdown file for humans, structured JSONL for scripts, and a SQLite archive for historical analysis. Weekly automated scans check for schema drift and query patterns.</p>
+            </div>
+            <div class="mcp-diagram">
+              <svg viewBox="0 0 240 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architecture: user question routes through Claude to MCP servers querying the warehouse" style="width:100%;max-width:240px">
+                <rect x="55" y="0" width="130" height="32" rx="16" fill="none" stroke="var(--gold)" stroke-width="1.2"/>
+                <text x="120" y="20" text-anchor="middle" fill="var(--gold)" font-family="var(--mono)" font-size="9">User question</text>
+                <line x1="120" y1="32" x2="120" y2="58" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="3 3"/>
+                <polygon points="116,55 124,55 120,62" fill="var(--text-faint)"/>
+                <rect x="40" y="62" width="160" height="38" rx="6" fill="rgba(217,161,59,.1)" stroke="var(--gold)" stroke-width="1.4"/>
+                <text x="120" y="85" text-anchor="middle" fill="var(--gold)" font-family="var(--mono)" font-size="10" font-weight="600">Claude (router)</text>
+                <line x1="55" y1="100" x2="30" y2="130" stroke="var(--teal-mid)" stroke-width="1"/>
+                <line x1="120" y1="100" x2="120" y2="130" stroke="var(--teal-mid)" stroke-width="1"/>
+                <line x1="185" y1="100" x2="210" y2="130" stroke="var(--teal-mid)" stroke-width="1"/>
+                <rect x="0" y="130" width="64" height="40" rx="4" fill="none" stroke="var(--teal-mid)" stroke-width="1.2"/>
+                <text x="32" y="147" text-anchor="middle" fill="var(--text-faint)" font-family="var(--mono)" font-size="7">MCP</text>
+                <text x="32" y="160" text-anchor="middle" fill="var(--text-pale)" font-family="var(--mono)" font-size="8.5">Utilization</text>
+                <rect x="88" y="130" width="64" height="40" rx="4" fill="none" stroke="var(--teal-mid)" stroke-width="1.2"/>
+                <text x="120" y="147" text-anchor="middle" fill="var(--text-faint)" font-family="var(--mono)" font-size="7">MCP</text>
+                <text x="120" y="160" text-anchor="middle" fill="var(--text-pale)" font-family="var(--mono)" font-size="8.5">Revenue</text>
+                <rect x="176" y="130" width="64" height="40" rx="4" fill="none" stroke="var(--teal-mid)" stroke-width="1.2"/>
+                <text x="208" y="147" text-anchor="middle" fill="var(--text-faint)" font-family="var(--mono)" font-size="7">MCP</text>
+                <text x="208" y="160" text-anchor="middle" fill="var(--text-pale)" font-family="var(--mono)" font-size="8.5">HR</text>
+                <text x="120" y="190" text-anchor="middle" fill="var(--text-faint)" font-family="var(--mono)" font-size="7.5" letter-spacing=".5">get_schema + direct_sql</text>
+                <line x1="32" y1="170" x2="32" y2="210" stroke="var(--teal-mid)" stroke-width="1" stroke-dasharray="3 3"/>
+                <line x1="120" y1="170" x2="120" y2="210" stroke="var(--teal-mid)" stroke-width="1" stroke-dasharray="3 3"/>
+                <line x1="208" y1="170" x2="208" y2="210" stroke="var(--teal-mid)" stroke-width="1" stroke-dasharray="3 3"/>
+                <rect x="10" y="210" width="220" height="24" rx="4" fill="rgba(217,161,59,.06)" stroke="var(--gold)" stroke-width="1" stroke-dasharray="4 2"/>
+                <text x="120" y="226" text-anchor="middle" fill="var(--gold)" font-family="var(--mono)" font-size="7.5">8 validation layers</text>
+                <line x1="120" y1="234" x2="120" y2="256" stroke="var(--teal-mid)" stroke-width="1" stroke-dasharray="3 3"/>
+                <polygon points="116,253 124,253 120,260" fill="var(--teal-mid)"/>
+                <rect x="20" y="260" width="200" height="38" rx="6" fill="none" stroke="var(--silver)" stroke-width="1.4"/>
+                <text x="120" y="283" text-anchor="middle" fill="var(--text-pale)" font-family="var(--mono)" font-size="10">Fabric Warehouse</text>
+              </svg>
+            </div>
+          </div>
+        </details>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="more" id="more">
+  <div class="wrap">
+    <div class="sec-head"><h2>What else shipped</h2></div>
+    <div class="more-grid">
+
+      <div class="more-card reveal" tabindex="0" data-tags="Power Apps,Dataverse,Logic Apps">
+        <span class="more-num">$200K</span>
+        <span class="more-text">Revenue leakage recovered by running a new reconciliation system in parallel with the old Excel process for 60 days.</span>
+        <span class="more-expand">Read more &rarr;</span>
+        <div class="more-panel">
+          <ul><li>The company ran a fiscal sponsorship business where revenue recognition follows grant-based rules: when funds come in for a client project, the company takes a management percentage and recognizes it over the service period.</li>
+          <li>Built a reconciliation system on Power Apps, Dataverse, and Logic Apps to replace the manual Excel process.</li>
+          <li>Ran both systems in parallel for 60 days. Discrepancies surfaced around revenue reversals that hadn't been properly propagated through the old process.</li>
+          <li>Finance traced the discrepancies and recovered approximately $200K in unbilled amounts.</li>
+          <li>The new system also expanded access from finance-only to 200+ users by adding a budgeted view (budgeted revenue vs. actual, at multiple aggregation levels).</li></ul>
+        </div>
+      </div>
+
+      <div class="more-card reveal" tabindex="0" data-tags="Paycor,Active Directory,Logic Apps,Azure">
+        <span class="more-num">93%</span>
+        <span class="more-text">Faster employee provisioning through automated Paycor-to-Active-Directory integration.</span>
+        <span class="more-expand">Read more &rarr;</span>
+        <div class="more-panel">
+          <ul><li>Automated the flow from Paycor (HRIS) into Active Directory and downstream systems using Logic Apps in a dedicated Azure resource group.</li>
+          <li>Modular component architecture: individual components (extract from Paycor, ingest to AD, write back to downstream systems) compose into larger processes (onboarding, status change, offboarding). Changing one component doesn't require changing the entire chain.</li>
+          <li>Two-tier AD setup: on-prem Domain Controller syncs to Azure Active Directory.</li>
+          <li>Handles onboarding, status changes, and offboarding as compositions of the same underlying components.</li></ul>
+        </div>
+      </div>
+
+      <div class="more-card reveal" tabindex="0" data-tags="Python,CData,SQL,Report Automation">
+        <span class="more-num">300+ hours</span>
+        <span class="more-text">Analyst time saved every month by automating month-end reporting across 15 client organizations.</span>
+        <span class="more-expand">Read more &rarr;</span>
+        <div class="more-panel">
+          <ul><li>Previously, consultants manually pulled data from each client's accounting system (QuickBooks, Sage Intacct, etc.) into Excel, applied formulas, and formatted. Repeated every month for every client.</li>
+          <li>Built Python scripts using CData unified connectors to extract from client systems, dump into a SQL layer, then produce formatted output in exactly the same layout the clients were used to.</li>
+          <li>Started with one client as a proof of concept. Scaled to 15 by word of mouth as other teams saw the time savings.</li>
+          <li>This is what I presented at the CData conference: how unified connectors replaced dozens of individual API integrations and accelerated reporting delivery.</li></ul>
+        </div>
+      </div>
+
+      <div class="more-card reveal" tabindex="0" data-tags="Salesforce,NetSuite,AI Matching,Entity Resolution">
+        <span class="more-num">25% &rarr; 5%</span>
+        <span class="more-text">Cross-system entity matching rejections, using AI to resolve records between CRM and ERP where no shared key existed.</span>
+        <span class="more-expand">Read more &rarr;</span>
+        <div class="more-panel">
+          <ul><li>No iPaaS tool (Celigo, Boomi, etc.) existed to integrate the CRM (Salesforce) and ERP (NetSuite). Records were supposed to be linked manually via an intake form, but people often skipped the step.</li>
+          <li>Two-pass matching: deterministic lookup first (if a shared key exists, it's already matched), then AI matching on entity attributes for everything else (handling variations like "ink" vs "inclusive," "corp" vs "corporate").</li>
+          <li>Human-in-the-loop approval: AI sends potential matches via email to the relevant domain owner. They reply to confirm or reject. Approved matches feed into the next pipeline run automatically.</li>
+          <li>Sat with each reviewer one-on-one to clear the initial backlog together. Once they saw that the ongoing burden was 5 rows instead of 25, adoption stopped being a problem.</li>
+          <li>Extended the same pattern to HRIS-to-ERP employee matching and contractor-to-FTE conversion tracking.</li></ul>
+        </div>
+      </div>
+
+      <div class="more-card reveal" tabindex="0" data-tags="Azure DevOps,Git,CI/CD,Python,YAML">
+        <span class="more-num">8 weeks</span>
+        <span class="more-text">From zero version control to gated CI/CD deployments across 3 environments.</span>
+        <span class="more-expand">Read more &rarr;</span>
+        <div class="more-panel">
+          <ul><li>Azure DevOps with Git-integrated Fabric workspaces. Dev/Test/Prod branching strategy with approval gates at each promotion.</li>
+          <li>6 YAML pipelines: dev sync, environment promotion (test or prod), cross-tenant repo mirroring, SQL object migration, Terraform plan, Terraform apply.</li>
+          <li>Deployment engine (5,448 lines of Python): recursive activity tree traversal for nested pipeline activities, fuzzy notebook name matching, cross-workspace artifact ID resolution, two-phase deployment with automatic service principal permission grants.</li>
+          <li>The harder part was the team transition: shifting from doing everything myself to reviewing and approving other people's work. That was as much a leadership shift as a technical one.</li></ul>
+        </div>
+      </div>
+
+      <div class="more-card reveal" tabindex="0" data-tags="Event-Driven,NetSuite,Pipeline Orchestration">
+        <span class="more-num">Same day</span>
+        <span class="more-text">Month-end financial reporting, down from five or six days, using event-driven pipeline triggers.</span>
+        <span class="more-expand">Read more &rarr;</span>
+        <div class="more-panel">
+          <ul><li>Old process had two bottlenecks: finance had to manually notify the data team that the month was closed (sometimes days late), then the team had to manually pull and combine reports.</li>
+          <li>Found NetSuite's accounting time period table, which tracks open vs. closed months. The pipeline queries it nightly. When it detects a new closed month, everything downstream triggers automatically.</li>
+          <li>The signal is completely reliable: if finance hasn't closed the month, the table doesn't change, and the pipeline doesn't fire. Zero misfires.</li>
+          <li>Revenue reporting layer triggers at 8am. Reports are ready before anyone's at their desk.</li></ul>
+        </div>
+      </div>
+
+      <div class="more-card reveal" tabindex="0" data-tags="Terraform,Azure,IaC,Key Vault,Fabric">
+        <span class="more-num">17 modules</span>
+        <span class="more-text">Terraform provisioning all infrastructure as code across 3 environments.</span>
+        <span class="more-expand">Read more &rarr;</span>
+        <div class="more-panel">
+          <ul><li>Modules cover: Fabric workspaces, warehouses (with binary collation for faster string comparisons), lakehouses, capacity units, Key Vault with 3 access policy variants, Azure AD service principals, storage accounts, user-managed identities, Purview, and Power BI workspace assignments.</li>
+          <li>4 service principals with distinct scopes: DevOps (admin, CI/CD), Infrastructure (member, BI refresh), Fivetran (blob access, prod only), Purview (viewer, metadata scanning only).</li>
+          <li>3 environments (Dev/Test/Prod) with separate backend configs. ~1,500 lines across 84 .tf files. Zero hardcoded credentials anywhere.</li>
+          <li>Originally built so the platform could be replicated for other client organizations. That replication vision is why IaC mattered from day one.</li></ul>
+        </div>
+      </div>
+
+      <div class="more-card reveal" tabindex="0" data-tags="CData Conference,Data Integration,Public Speaking">
+        <span class="more-num">60+</span>
+        <span class="more-text">Attendees at my CData conference talk on unified connector-driven reporting.</span>
+        <span class="more-expand">Read more &rarr;</span>
+        <div class="more-panel">
+          <ul><li>CData invited me to present because our use case was distinctive: nonprofits serving nonprofits, reporting across a dozen different client accounting platforms (QuickBooks, Sage Intacct, etc.).</li>
+          <li>The talk covered how their unified connector layer replaced dozens of individual API integrations and accelerated client onboarding and report delivery.</li>
+          <li>This talk was about data integration and operational efficiency, not AI or MCP servers.</li>
+          <li>Audience: enterprise data teams across 15+ client organizations.</li></ul>
+        </div>
+      </div>
+
+      <div class="more-card reveal" tabindex="0" data-tags="Power BI,Training,Self-Service,Workshops">
+        <span class="more-num">20+</span>
+        <span class="more-text">Business users trained on self-service Power BI across 8 workshops.</span>
+        <span class="more-expand">Read more &rarr;</span>
+        <div class="more-panel">
+          <ul><li>8 workshops over 2 weeks: 4 sessions, 2 groups of ~10 people each.</li>
+          <li>Used live, in-progress dashboards with real data. People saw their own numbers for the first time, which generated genuine engagement.</li>
+          <li>The sessions doubled as feedback rounds on the dashboards themselves. Users told us what was wrong, what was confusing, and what they actually needed. We shipped fixes between sessions.</li>
+          <li>Ad-hoc data requests dropped 40% afterward. The goal wasn't fewer questions; it was people who could answer their own.</li></ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="more-modal-overlay" id="moreModal" hidden>
+      <div class="more-modal" role="dialog" aria-modal="true">
+        <button class="more-modal-close" aria-label="Close">&times;</button>
+        <div class="more-modal-header">
+          <span class="more-modal-num" id="mmNum"></span>
+          <span class="more-modal-title" id="mmTitle"></span>
+        </div>
+        <div class="more-modal-tags" id="mmTags"></div>
+        <div class="more-modal-visual" id="mmVisual"><span>Screenshot placeholder</span></div>
+        <div class="more-modal-body" id="mmBody"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Projects</span><h2>Things I built for myself</h2></div>
+    <div class="projects-grid">
+      <article class="proj-card reveal">
+        <h3>Humanizer web app</h3>
+        <p class="proj-card-desc">[one line: what it does]</p>
+        <div class="tags"><span class="tag">Anthropic API</span><span class="tag">[stack]</span></div>
+        <a class="proj-card-link" href="#">[url]</a>
+      </article>
+      <article class="proj-card reveal">
+        <h3>Crystalline Emergence</h3>
+        <p class="proj-card-desc">[one line]</p>
+        <div class="tags"><span class="tag">p5.js</span><span class="tag">generative art</span></div>
+        <div id="crystalline-canvas" aria-hidden="true"></div>
+        <a class="proj-card-link" href="#">[url]</a>
+      </article>
+      <article class="proj-card reveal">
+        <h3>Apple Watch health dashboard</h3>
+        <p class="proj-card-desc">[one line]</p>
+        <div class="tags"><span class="tag">[stack]</span></div>
+        <a class="proj-card-link" href="#">[url]</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="timeline" id="timeline">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Timeline</span><h2>How I got here</h2></div>
+    <ol class="tl">
+      <li class="tl-item">
+        <span class="tl-year">2020</span><span class="tl-dot"></span>
+        <div class="tl-body tl-static">
+          <div class="tl-title">B.E. Electronics &amp; Telecom</div>
+          <div class="tl-place">University of Mumbai</div>
+        </div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-year">2020</span><span class="tl-dot"></span>
+        <div class="tl-body">
+          <button class="tl-toggle" aria-expanded="false" aria-controls="tlp1">
+            <span><span class="tl-title">Data analyst intern</span><br><span class="tl-place">Mumbai</span></span>
+            <svg class="tl-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="tl-panel" id="tlp1"><div class="tl-panel-in">
+            <p class="tl-story">First job in data. Diagnosed ETL pipeline failures, wrote operational runbooks, and cut data load times by 40%.</p>
+            <div class="tags"><span class="tag">SQL</span><span class="tag">ETL</span><span class="tag">Python</span></div>
+          </div></div>
+        </div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-year">2021</span><span class="tl-dot"></span>
+        <div class="tl-body tl-static">
+          <div class="tl-title">Moved to the US for grad school</div>
+          <div class="tl-place">Syracuse University</div>
+        </div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-year">2022</span><span class="tl-dot"></span>
+        <div class="tl-body tl-static">
+          <div class="tl-title">M.S. Information Systems</div>
+          <div class="tl-place">Syracuse University</div>
+        </div>
+      </li>
+      <li class="tl-item big">
+        <span class="tl-year">2022</span><span class="tl-dot"></span>
+        <div class="tl-body">
+          <button class="tl-toggle" aria-expanded="false" aria-controls="tlp-main">
+            <span>
+              <span class="tl-title">Data Analyst &rarr; Assoc. Director &rarr; Data Architect</span><br>
+              <span class="tl-place">Kiwi Partners &rarr; Arabella Advisors &rarr; Vital Impact Group</span>
+            </span>
+            <svg class="tl-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="tl-panel" id="tlp-main"><div class="tl-panel-in">
+            <p class="tl-story">One company through two acquisitions. Three roles, each building on the last:</p>
+            <div class="tl-roles">
+              <div class="tl-role">
+                <div class="tl-role-head"><span class="tl-role-date">2022</span><span class="tl-role-title">Data Analyst</span><span class="tl-role-co">Kiwi Partners</span></div>
+                <p class="tl-role-desc">First data hire. Built the company's first gross-profit report, which flagged 37 unprofitable engagements nobody knew about. Created the revenue reconciliation system that recovered $200K. Automated month-end reporting across 15 client organizations, saving 300+ analyst hours/month.</p>
+              </div>
+              <div class="tl-role">
+                <div class="tl-role-head"><span class="tl-role-date">2023</span><span class="tl-role-title">Assoc. Director, Data Engineering &amp; Analytics</span><span class="tl-role-co">Arabella Advisors</span></div>
+                <p class="tl-role-desc">Hired and led a team of 8. Evaluated Fabric, Snowflake, and Databricks; chose Fabric. Architected the medallion-based data platform: 21 source systems consolidated, 125 pipelines across 3 environments, 400+ users. Built CI/CD from scratch (8 weeks), IaC with 17 Terraform modules, and a data governance framework (12 conformed dimensions, 10 fact tables, 36 KPIs).</p>
+              </div>
+              <div class="tl-role">
+                <div class="tl-role-head"><span class="tl-role-date">2025</span><span class="tl-role-title">Data Architect</span><span class="tl-role-co">Vital Impact Group</span></div>
+                <p class="tl-role-desc">Built the AI analytics layer: 7 MCP servers, 65 tools, 1,300+ queries/week at 94.5% success. The system identified $7.6M in unrealized billable capacity; the org used that data to secure $3M in new contracts. Designed 8-layer query security and 3-tier observability. Trained 20+ users on self-service analytics.</p>
+              </div>
+            </div>
+            <div class="tags"><span class="tag">Microsoft Fabric</span><span class="tag">PySpark</span><span class="tag">MCP</span><span class="tag">Power BI</span><span class="tag">Terraform</span><span class="tag">Leadership</span></div>
+          </div></div>
+        </div>
+      </li>
+      <li class="tl-item big">
+        <span class="tl-year">Now</span><span class="tl-dot"></span>
+        <div class="tl-body tl-static">
+          <div class="tl-title">Looking for the next one to build</div>
+          <div class="tl-place"><a href="#contact" style="color:var(--gold)">Talk to me</a></div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="opinions" id="opinions">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Opinions</span><h2>Things I'll defend in an interview</h2></div>
+    <div class="opinions-grid">
+      <div class="opinion-card reveal">
+        <p class="opinion-stmt">Flag it, never delete it.</p>
+        <p class="opinion-support">When a row fails validation, it gets marked inactive with a reason code. If an API returns partial data or a permission changes upstream, the warehouse doesn't lose records it can't get back. Deleting data you might need later is a one-way door.</p>
+      </div>
+      <div class="opinion-card reveal">
+        <p class="opinion-stmt">Human in the loop, always.</p>
+        <p class="opinion-support">When we started with AI analytics, we validated every significant finding by hand in raw SQL. Over time, query logs showed us what people actually asked, which questions the model handled well, and where it struggled. That feedback loop made the system better, but it started with not trusting the output until we'd earned the right to. Same principle on the entity resolution layer: AI proposes matches, but a domain owner reviews them before anything hits the warehouse. Trust is built incrementally.</p>
+      </div>
+      <div class="opinion-card reveal">
+        <p class="opinion-stmt">Move only what changed.</p>
+        <p class="opinion-support">Every row gets a content hash. Only rows where the hash differs move to the next layer. A weekly full reload catches anything that slipped through. Full nightly reloads are a workaround for not knowing what changed.</p>
+      </div>
+      <div class="opinion-card reveal">
+        <p class="opinion-stmt">Train people, don't be their bottleneck.</p>
+        <p class="opinion-support">I ran workshops on the live data people would actually use. Ad-hoc requests dropped 40%. The goal isn't fewer questions; it's people who can answer their own.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="life" id="life">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Off the clock</span><h2>Life outside the warehouse</h2></div>
+    <div class="life-grid">
+      <div class="ph"><img src="assets/life/cooking.jpg" alt="Cooking for a crowd" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Cooking</span></div>
+      <div class="ph"><img src="assets/life/cocktails.jpg" alt="Mixing cocktails" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Cocktails</span></div>
+      <div class="ph"><img src="assets/life/boxing.jpg" alt="Boxing" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Boxing</span></div>
+      <div class="ph"><img src="assets/life/shows.jpg" alt="At a live show" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Shows</span></div>
+      <div class="ph"><img src="assets/life/friends.jpg" alt="With friends" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Friends</span></div>
+      <div class="ph"><img src="assets/life/food.jpg" alt="Food" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Food</span></div>
+    </div>
+    <p class="life-note">On weekends I'm usually cooking for a crowd. The rest of the time I'm boxing, mixing drinks, or chasing restaurants and live shows around the city.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2>Got an ambiguous data problem? That's my favorite kind.</h2>
+    <p>I'm looking for a team with real data problems that wants someone to own them end to end.</p>
+    <p class="roles">Open to Senior Data Engineer, Data Architect, AI + Data Engineer, or Analytics Engineer.</p>
+    <div class="cta-row">
+      <a class="cta primary" href="mailto:shubham.malpani@gmail.com">Email me</a>
+      <a class="cta" href="https://www.linkedin.com/in/malpanishubham/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a>
+      <a class="cta" href="https://github.com/malpanishubham2" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
+      <a class="cta" href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Shubham Malpani &middot; New York, NY</span>
+    <span class="cmdk-hint">Press <kbd class="cmdk-key">/</kbd> to jump around</span>
+    <span id="footerYear">&copy; 2026</span>
+  </div>
+</footer>
+
+<div class="cmdk-overlay" id="cmdkOverlay" hidden>
+  <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Command palette">
+    <input type="text" class="cmdk-input" id="cmdkInput" placeholder="Jump to a section or ask a question..." autocomplete="off" aria-controls="cmdkResults">
+    <ul class="cmdk-results" id="cmdkResults" role="listbox"></ul>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* nav scroll + hamburger */
+  try {
+  var nav = document.getElementById("nav");
+  function onScroll(){ nav.classList.toggle("scrolled", window.scrollY > 40); }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  var navToggle = document.querySelector(".nav-toggle");
+  var navLinks = document.querySelector(".nav-links");
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", function(){
+      var open = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(open));
+    });
+    navLinks.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){
+        navLinks.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+  } catch(e){ console.warn("Nav init failed:", e); }
+
+  /* hero canvas */
+  try {
+  var canvas = document.getElementById("sky");
+  var ctx = canvas.getContext("2d");
+  var W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var running = false, rafId = null;
+  var gridSpacing = 40, traces = [], bars = [], gridNodes = [];
+
+  function sizeCanvas(){
+    var r = canvas.parentNode.getBoundingClientRect();
+    W = r.width; H = r.height;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function seed(){
+    traces = []; bars = []; gridNodes = [];
+    var cols = Math.ceil(W / gridSpacing) + 1;
+    var rows = Math.ceil(H / gridSpacing) + 1;
+    for (var r = 0; r < rows; r++){
+      for (var c = 0; c < cols; c++){
+        var x = c * gridSpacing, y = r * gridSpacing;
+        if (((c * 7 + r * 13) % 17) < 3){
+          gridNodes.push({x:x, y:y, pulse: ((c * 3 + r * 5) % 11) * 0.57, bright: ((c+r) % 5) === 0});
+        }
+      }
+    }
+    var traceCount = Math.max(4, Math.min(8, Math.round(H / 120)));
+    for (var i = 0; i < traceCount; i++){
+      var pts = [];
+      var baseY = 80 + (i / traceCount) * (H - 160);
+      var segments = Math.ceil(W / 30) + 1;
+      for (var s = 0; s < segments; s++){
+        pts.push({
+          x: s * 30,
+          y: baseY + (((s * 7 + i * 13) % 19) - 9) * 3,
+          amp: 4 + ((s * 3 + i * 7) % 11),
+          ph: ((s * 5 + i * 3) % 17) * 0.37,
+          w: 0.0008 + ((i * 3 + s) % 7) * 0.0003
+        });
+      }
+      traces.push({pts: pts, color: i < 2 ? "217,161,59" : (i < 4 ? "159,176,178" : "176,137,84"), alpha: 0.12 + ((i * 3) % 5) * 0.04});
+    }
+    var barCount = Math.max(3, Math.min(6, Math.round(W / 220)));
+    for (var b = 0; b < barCount; b++){
+      var bx = W * 0.55 + b * 60 + ((b * 17) % 30);
+      var bh = 30 + ((b * 37) % 60);
+      bars.push({x: bx, h: bh, w: 16, ph: b * 1.1, speed: 0.0006 + b * 0.0002});
+    }
+  }
+  function frame(t){
+    ctx.clearRect(0, 0, W, H);
+    ctx.strokeStyle = "rgba(159,176,178,0.04)";
+    ctx.lineWidth = 0.5;
+    for (var gx = 0; gx < W; gx += gridSpacing){
+      ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke();
+    }
+    for (var gy = 0; gy < H; gy += gridSpacing){
+      ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke();
+    }
+    for (var n = 0; n < gridNodes.length; n++){
+      var nd = gridNodes[n];
+      var pulse = 0.5 + 0.5 * Math.sin(t * 0.001 + nd.pulse);
+      if (nd.bright){
+        ctx.fillStyle = "rgba(217,161,59," + (0.15 + pulse * 0.25) + ")";
+        ctx.beginPath(); ctx.arc(nd.x, nd.y, 2.2, 0, Math.PI * 2); ctx.fill();
+      } else {
+        ctx.fillStyle = "rgba(159,176,178," + (0.08 + pulse * 0.1) + ")";
+        ctx.beginPath(); ctx.arc(nd.x, nd.y, 1.2, 0, Math.PI * 2); ctx.fill();
+      }
+    }
+    for (var i = 0; i < traces.length; i++){
+      var tr = traces[i];
+      ctx.strokeStyle = "rgba(" + tr.color + "," + tr.alpha + ")";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      for (var p = 0; p < tr.pts.length; p++){
+        var pt = tr.pts[p];
+        var py = pt.y + Math.sin(t * pt.w + pt.ph) * pt.amp;
+        if (p === 0) ctx.moveTo(pt.x, py); else ctx.lineTo(pt.x, py);
+      }
+      ctx.stroke();
+    }
+    var barBase = H * 0.75;
+    for (var b = 0; b < bars.length; b++){
+      var bar = bars[b];
+      var bh = bar.h * (0.6 + 0.4 * Math.sin(t * bar.speed + bar.ph));
+      ctx.fillStyle = "rgba(217,161,59,0.07)";
+      ctx.fillRect(bar.x, barBase - bh, bar.w, bh);
+      ctx.strokeStyle = "rgba(217,161,59,0.15)";
+      ctx.lineWidth = 0.8;
+      ctx.strokeRect(bar.x, barBase - bh, bar.w, bh);
+    }
+    if (running) rafId = requestAnimationFrame(frame);
+  }
+  function startSky(){ if (!running){ running = true; rafId = requestAnimationFrame(frame); } }
+  function stopSky(){ running = false; if (rafId) cancelAnimationFrame(rafId); }
+
+  sizeCanvas(); seed();
+  if (reduce){
+    frame(1200);
+  } else {
+    startSky();
+    new IntersectionObserver(function(entries){
+      entries[0].isIntersecting ? startSky() : stopSky();
+    }).observe(canvas.parentNode);
+  }
+  var resizeTimer;
+  window.addEventListener("resize", function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){ sizeCanvas(); seed(); if (reduce) frame(1200); }, 150);
+  });
+  } catch(e){ console.warn("Canvas init failed:", e); }
+
+  /* role cycler with IntersectionObserver cleanup */
+  try {
+  var roles = ["Senior Data Engineer","Data Architect","AI + Data Engineer","Analytics Engineer"];
+  var roleEl = document.getElementById("roleCycle");
+  var ri = 0;
+  var roleInterval = null;
+  if (!reduce && roleEl){
+    var heroObs = new IntersectionObserver(function(entries){
+      if (entries[0].isIntersecting) {
+        if (!roleInterval) {
+          roleInterval = setInterval(function(){
+            roleEl.className = "role-cycle out";
+            setTimeout(function(){
+              ri = (ri + 1) % roles.length;
+              roleEl.textContent = roles[ri];
+              roleEl.className = "role-cycle in";
+            }, 350);
+          }, 2400);
+        }
+      } else {
+        if (roleInterval) { clearInterval(roleInterval); roleInterval = null; }
+      }
+    });
+    heroObs.observe(document.querySelector(".hero"));
+  }
+  } catch(e){ console.warn("Role cycler failed:", e); }
+
+  /* generic accordion */
+  function setupAccordion(selector){
+    document.querySelectorAll(selector).forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!open));
+        var panelId = btn.getAttribute("aria-controls");
+        if (panelId) document.getElementById(panelId).classList.toggle("open", !open);
+      });
+    });
+  }
+  try {
+  setupAccordion(".tl-toggle");
+  setupAccordion(".dev-phase-toggle");
+  } catch(e){ console.warn("Accordion init failed:", e); }
+
+  /* more section modal */
+  try {
+  var moreOverlay = document.getElementById("moreModal");
+  var mmNum = document.getElementById("mmNum");
+  var mmTitle = document.getElementById("mmTitle");
+  var mmTags = document.getElementById("mmTags");
+  var mmVisual = document.getElementById("mmVisual");
+  var mmBody = document.getElementById("mmBody");
+  var moreCloseBtn = document.querySelector(".more-modal-close");
+
+  function openMoreModal(card){
+    var num = card.querySelector(".more-num").innerHTML;
+    var text = card.querySelector(".more-text").textContent;
+    var panel = card.querySelector(".more-panel");
+    var tags = (card.getAttribute("data-tags") || "").split(",").filter(Boolean);
+    mmNum.innerHTML = num;
+    mmTitle.textContent = text;
+    mmTags.innerHTML = tags.map(function(t){ return '<span class="tag">' + t.trim() + '</span>'; }).join("");
+    mmBody.innerHTML = panel ? panel.innerHTML : "";
+    mmVisual.innerHTML = "<span>Screenshot placeholder</span>";
+    moreOverlay.hidden = false;
+    document.body.style.overflow = "hidden";
+    moreCloseBtn.focus();
+  }
+  function closeMoreModal(){
+    moreOverlay.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".more-card").forEach(function(card){
+    card.addEventListener("click", function(){ openMoreModal(card); });
+    card.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " "){ e.preventDefault(); openMoreModal(card); } });
+  });
+  moreCloseBtn.addEventListener("click", closeMoreModal);
+  moreOverlay.addEventListener("click", function(e){ if (e.target === moreOverlay) closeMoreModal(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !moreOverlay.hidden) closeMoreModal(); });
+  } catch(e){ console.warn("More modal init failed:", e); }
+
+  /* scroll reveals */
+  try {
+  var revealEls = document.querySelectorAll(".reveal");
+  if (reduce){
+    revealEls.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add("in"); ro.unobserve(en.target); }
+      });
+    }, {threshold:0.18});
+    revealEls.forEach(function(el){ ro.observe(el); });
+  }
+  } catch(e){ console.warn("Reveal init failed:", e); }
+
+  /* project tabs */
+  try {
+  var projTabs = document.querySelectorAll('.proj-tab');
+  var tablist = document.querySelector('[role="tablist"]');
+
+  projTabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      projTabs.forEach(function(t){ t.setAttribute("aria-selected","false"); });
+      tab.setAttribute("aria-selected","true");
+      document.querySelectorAll('.proj[role="tabpanel"]').forEach(function(p){ p.classList.remove("active"); });
+      var panel = document.getElementById(tab.getAttribute("aria-controls"));
+      if (panel){ panel.classList.add("active"); panel.classList.add("in"); }
+    });
+  });
+
+  if (tablist) {
+    tablist.addEventListener("keydown", function(e){
+      var tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+      var idx = tabs.indexOf(document.activeElement);
+      if (idx < 0) return;
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        e.preventDefault();
+        var next = e.key === "ArrowRight" ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+        tabs[next].focus();
+        tabs[next].click();
+      }
+    });
+    projTabs.forEach(function(tab, i){
+      tab.setAttribute("tabindex", i === 0 ? "0" : "-1");
+    });
+  }
+  } catch(e){ console.warn("Tabs init failed:", e); }
+
+  /* trace explorer */
+  try {
+  var traceBtns = document.querySelectorAll('#proj-01 .arch-btn');
+  var tracePanels = document.querySelectorAll('#proj-01 .trace-panel');
+  traceBtns.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      traceBtns.forEach(function(b){ b.setAttribute("aria-pressed", "false"); });
+      btn.setAttribute("aria-pressed", "true");
+      var key = btn.getAttribute("data-k");
+      tracePanels.forEach(function(p){ p.hidden = p.getAttribute("data-panel") !== key; });
+    });
+  });
+
+  var traceJump = document.querySelector('.trace-jump[href="#proj-02"]');
+  if (traceJump) {
+    traceJump.addEventListener("click", function(e){
+      e.preventDefault();
+      var tab02 = document.getElementById("tab-02");
+      if (tab02) tab02.click();
+      var panel = document.getElementById("proj-02");
+      if (panel) setTimeout(function(){ panel.scrollIntoView({behavior: reduce ? "auto" : "smooth"}); }, 100);
+    });
+  }
+  } catch(e){ console.warn("Trace init failed:", e); }
+
+  /* chat demo with debounce */
+  try {
+  var chatAnswers = {
+    util: {
+      num: "$7.6M",
+      text: "12 people are tracking well below target. Closing the gap is about $7.6M in billable capacity.",
+      head: ["Role", "Utilization"],
+      rows: [["Level 3 Advisory","45%"],["Level 2 Delivery","52%"],["Level 4 Strategy","58%"]]
+    },
+    rev: {
+      num: "$4.2M",
+      text: "Recognized revenue came in at $4.2M, up 9% on the prior month.",
+      head: ["Line of business", "Closed"],
+      rows: [["Consulting","$2.1M"],["Fiscal sponsorship","$1.4M"],["Advisory","$0.7M"]]
+    },
+    margin: {
+      num: "37",
+      text: "37 engagements are below a healthy margin. Here are the three worst.",
+      head: ["Engagement", "GP %"],
+      rows: [["Project Aster","-4%"],["Project Vale","11%"],["Project Nimbus","18%"]]
+    }
+  };
+  var chatThread = document.getElementById("chatThread");
+  var chips = document.querySelectorAll(".chip");
+  var chatBusy = false;
+
+  function buildAssistantHTML(a){
+    var html = '<span class="ans-num">' + a.num + '</span><p class="ans-text">' + a.text + '</p>' +
+      '<table><thead><tr><th>' + a.head[0] + '</th><th>' + a.head[1] + '</th></tr></thead><tbody>';
+    a.rows.forEach(function(r){ html += '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td></tr>'; });
+    html += '</tbody></table>';
+    return html;
+  }
+
+  function trimExchanges(){
+    var existing = chatThread.querySelectorAll(".exchange");
+    if (existing.length >= 2) existing[0].remove();
+  }
+
+  function appendExchange(qText, a){
+    var empty = chatThread.querySelector(".chat-empty");
+    if (empty) empty.remove();
+    trimExchanges();
+
+    var wrap = document.createElement("div");
+    wrap.className = "exchange";
+    var userBubble = document.createElement("div");
+    userBubble.className = "bubble user";
+    userBubble.textContent = qText;
+    wrap.appendChild(userBubble);
+    chatThread.appendChild(wrap);
+    chatThread.scrollTop = chatThread.scrollHeight;
+
+    if (reduce){
+      var bubble = document.createElement("div");
+      bubble.className = "bubble assistant";
+      bubble.innerHTML = buildAssistantHTML(a);
+      wrap.appendChild(bubble);
+      chatThread.scrollTop = chatThread.scrollHeight;
+      return;
+    }
+
+    var typing = document.createElement("div");
+    typing.className = "typing";
+    typing.innerHTML = "<i></i><i></i><i></i>";
+    wrap.appendChild(typing);
+    chatThread.scrollTop = chatThread.scrollHeight;
+    setTimeout(function(){
+      typing.remove();
+      var bubble2 = document.createElement("div");
+      bubble2.className = "bubble assistant";
+      bubble2.innerHTML = buildAssistantHTML(a);
+      wrap.appendChild(bubble2);
+      chatThread.scrollTop = chatThread.scrollHeight;
+    }, 900);
+  }
+
+  chips.forEach(function(chip){
+    chip.addEventListener("click", function(){
+      if (chatBusy) return;
+      chatBusy = true;
+      chips.forEach(function(c){ c.setAttribute("aria-pressed", "false"); });
+      chip.setAttribute("aria-pressed", "true");
+      var a = chatAnswers[chip.getAttribute("data-q")];
+      appendExchange(chip.textContent, a);
+      setTimeout(function(){ chatBusy = false; }, reduce ? 100 : 1100);
+    });
+  });
+  } catch(e){ console.warn("Chat init failed:", e); }
+
+  /* command palette */
+  try {
+  var cmdItems = [
+    {label:"Home", type:"section", target:"#top"},
+    {label:"About", type:"section", target:"#about"},
+    {label:"Work", type:"section", target:"#work"},
+    {label:"More", type:"section", target:"#more"},
+    {label:"Timeline", type:"section", target:"#timeline"},
+    {label:"Opinions", type:"section", target:"#opinions"},
+    {label:"Life", type:"section", target:"#life"},
+    {label:"Contact", type:"section", target:"#contact"},
+    {label:"Who's underutilized this quarter?", type:"ask", key:"util"},
+    {label:"How much did we close last month?", type:"ask", key:"rev"},
+    {label:"Which projects are losing money?", type:"ask", key:"margin"}
+  ];
+  var overlay = document.getElementById("cmdkOverlay");
+  var cmdInput = document.getElementById("cmdkInput");
+  var cmdResults = document.getElementById("cmdkResults");
+  var lastFocused = null;
+  var activeIndex = 0;
+
+  function isTypingTarget(el){
+    if (!el) return false;
+    var tag = el.tagName;
+    return tag === "INPUT" || tag === "TEXTAREA" || el.isContentEditable;
+  }
+
+  function renderCmdResults(filter){
+    var f = filter.trim().toLowerCase();
+    var filtered = cmdItems.filter(function(it){ return it.label.toLowerCase().indexOf(f) > -1; });
+    cmdResults.innerHTML = "";
+    activeIndex = 0;
+    if (!filtered.length){
+      var li = document.createElement("li");
+      li.className = "cmdk-empty";
+      li.textContent = "No matches.";
+      cmdResults.appendChild(li);
+      return;
+    }
+    filtered.forEach(function(it, i){
+      var li = document.createElement("li");
+      var btn = document.createElement("button");
+      btn.setAttribute("role", "option");
+      btn.type = "button";
+      var labelSpan = document.createElement("span");
+      labelSpan.textContent = it.label;
+      var tagSpan = document.createElement("span");
+      tagSpan.className = "cmdk-tag";
+      tagSpan.textContent = it.type === "section" ? "jump" : "ask";
+      btn.appendChild(labelSpan);
+      btn.appendChild(tagSpan);
+      if (i === 0) btn.classList.add("active");
+      btn.addEventListener("click", function(){ activateCmd(it); });
+      li.appendChild(btn);
+      cmdResults.appendChild(li);
+    });
+  }
+
+  function activateCmd(it){
+    closeCmdk();
+    if (it.type === "section"){
+      var el = document.querySelector(it.target);
+      if (el) el.scrollIntoView({behavior: reduce ? "auto" : "smooth"});
+    } else if (it.type === "ask"){
+      projTabs.forEach(function(t){ t.setAttribute("aria-selected","false"); });
+      var tab02 = document.getElementById("tab-02");
+      if (tab02) {
+        tab02.setAttribute("aria-selected","true");
+        document.querySelectorAll('.proj[role="tabpanel"]').forEach(function(p){ p.classList.remove("active"); });
+        var panel02 = document.getElementById("proj-02");
+        if (panel02){ panel02.classList.add("active"); panel02.classList.add("in"); }
+      }
+      var work = document.getElementById("work");
+      if (work) work.scrollIntoView({behavior: reduce ? "auto" : "smooth"});
+      var chip = document.querySelector('.chip[data-q="' + it.key + '"]');
+      if (chip){
+        setTimeout(function(){ chip.click(); chip.focus(); }, reduce ? 0 : 500);
+      }
+    }
+  }
+
+  function openCmdk(){
+    lastFocused = document.activeElement;
+    overlay.hidden = false;
+    document.body.style.overflow = "hidden";
+    cmdInput.value = "";
+    renderCmdResults("");
+    cmdInput.focus();
+    document.addEventListener("keydown", onCmdKeydown, true);
+  }
+  function closeCmdk(){
+    overlay.hidden = true;
+    document.body.style.overflow = "";
+    document.removeEventListener("keydown", onCmdKeydown, true);
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  function onCmdKeydown(e){
+    if (e.key === "Escape"){ e.preventDefault(); closeCmdk(); return; }
+    if (e.key === "Tab"){
+      var focusable = overlay.querySelectorAll("input, button");
+      if (!focusable.length) return;
+      var firstEl = focusable[0], lastEl = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === firstEl){ e.preventDefault(); lastEl.focus(); }
+      else if (!e.shiftKey && document.activeElement === lastEl){ e.preventDefault(); firstEl.focus(); }
+      return;
+    }
+    if (e.key === "ArrowDown" || e.key === "ArrowUp"){
+      e.preventDefault();
+      var btns = cmdResults.querySelectorAll("button");
+      if (!btns.length) return;
+      if (btns[activeIndex]) btns[activeIndex].classList.remove("active");
+      activeIndex = e.key === "ArrowDown" ? Math.min(activeIndex + 1, btns.length - 1) : Math.max(activeIndex - 1, 0);
+      btns[activeIndex].classList.add("active");
+      btns[activeIndex].scrollIntoView({block: "nearest"});
+      return;
+    }
+    if (e.key === "Enter"){
+      var active = cmdResults.querySelector("button.active") || cmdResults.querySelector("button");
+      if (active) active.click();
+    }
+  }
+
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && overlay.hidden){
+      if (isTypingTarget(document.activeElement)) return;
+      e.preventDefault();
+      openCmdk();
+    }
+  });
+
+  cmdInput.addEventListener("input", function(){ renderCmdResults(cmdInput.value); });
+  overlay.addEventListener("click", function(e){ if (e.target === overlay) closeCmdk(); });
+  } catch(e){ console.warn("Command palette init failed:", e); }
+
+  /* footer year */
+  try {
+  var fy = document.getElementById("footerYear");
+  if (fy) fy.textContent = "© " + new Date().getFullYear();
+  } catch(e){}
+})();
+</script>
+</body>
+</html>
