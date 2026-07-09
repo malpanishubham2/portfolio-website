@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Shubham Malpani's portfolio website",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "esbuild src/analytics.js --bundle --minify --outfile=dist/analytics.js",
+    "lint": "echo 'No linter configured'"
+  },
+  "keywords": [
+    "portfolio",
+    "website"
+  ],
+  "author": "Shubham Malpani",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  }
+}
