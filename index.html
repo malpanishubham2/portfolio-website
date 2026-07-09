@@ -118,7 +118,7 @@
 
   /* ============ ABOUT ============ */
   .about{background:var(--paper);padding:clamp(60px,8vw,90px) 0}
-  .about-copy p{font-size:1.16rem;color:var(--text-dark);max-width:58ch}
+  .about-copy p{font-size:1.16rem;color:var(--text-dark);text-align:justify}
   .about-copy p+p{margin-top:.4em}
 
   /* ============ WORK ============ */
@@ -133,16 +133,16 @@
   @media(max-width:600px){.proj-tabs{grid-template-columns:1fr}}
   .proj[role="tabpanel"]{display:none;padding-top:20px}
   .proj.active{display:block}
-  .proj-copy{max-width:900px}
+  .proj-copy{}
   .proj-num{font-family:var(--serif);font-size:1rem;color:var(--gold-ink)}
   .proj-cat{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-mid);border:1px solid var(--teal-mid);border-radius:999px;padding:4px 12px;display:inline-block;margin-left:14px;vertical-align:2px}
   .proj h3{font-size:clamp(1.7rem,3.4vw,2.4rem);margin:16px 0 18px}
-  .proj-story{font-size:1.05rem;color:var(--text-soft);max-width:68ch}
+  .proj-story{font-size:1.05rem;color:var(--text-soft);text-align:justify}
   .stat-bar{margin-top:30px;overflow-x:auto}
   .stat-table{width:100%;border-collapse:collapse;font-size:.88rem;color:var(--text-pale)}
   .work .stat-table{color:var(--text-soft)}
   .stat-table td{padding:14px 18px;border:1px solid rgba(217,161,59,.18);text-align:center;white-space:nowrap}
-  .stat-table strong{display:block;font-family:var(--serif);font-weight:500;font-size:1.5rem;color:var(--gold);line-height:1.1;margin-bottom:4px}
+  .stat-table strong{display:block;font-family:var(--serif);font-weight:500;font-size:2rem;color:var(--gold);line-height:1.1;margin-bottom:6px}
   .work .stat-table strong{color:var(--gold-deep)}
   @media(max-width:600px){.stat-table td{display:block;border-bottom:0;text-align:left;white-space:normal}.stat-table td:last-child{border-bottom:1px solid rgba(217,161,59,.18)}}
   .stat-sep{color:var(--gold);font-size:.55rem}
@@ -242,7 +242,7 @@
   .mcp-details summary::before{content:"+ ";color:var(--gold)}
   .mcp-details[open] summary::before{content:"\2212 "}
   .mcp-body{display:grid;grid-template-columns:1fr 260px;gap:28px;padding-bottom:24px;color:var(--text-pale);font-size:.92rem;align-items:start}
-  .mcp-text p{max-width:none}
+  .mcp-text p{max-width:none;text-align:justify}
   @media(max-width:700px){.mcp-body{grid-template-columns:1fr}}
 
   /* ============ MORE ============ */
@@ -619,7 +619,7 @@
               <h4>Ask it anything: the bridge</h4>
               <p>Every layer above exists so this one can work: an AI analytics layer where anyone can ask a question about the data and get a real answer backed by SQL, without writing any themselves. That's the next project.</p>
               <div class="arch-stat">7 MCP servers &middot; 65 tools &middot; natural language in, SQL out</div>
-              <a class="trace-jump" href="#proj-02">See it answer questions below &darr;</a>
+              <a class="trace-jump" href="#proj-02">See it answer questions &rarr;</a>
             </div>
           </div>
         </div>
@@ -714,7 +714,6 @@
       <div class="more-card reveal" tabindex="0" data-tags="Power Apps,Dataverse,Logic Apps">
         <span class="more-title">Revenue Reconciliation System</span>
         <span class="more-metric">$200K recovered</span>
-        <span class="more-text">Replaced the manual Excel process with a parallel reconciliation system that surfaced unbilled amounts across fiscal sponsorship revenue.</span>
         <span class="more-expand">Read more &rarr;</span>
         <div class="more-panel">
           <ul><li>The company ran a fiscal sponsorship business where revenue recognition follows grant-based rules: when funds come in for a client project, the company takes a management percentage and recognizes it over the service period.</li>
@@ -728,7 +727,6 @@
       <div class="more-card reveal" tabindex="0" data-tags="Paycor,Active Directory,Logic Apps,Azure">
         <span class="more-title">Automated Employee Provisioning</span>
         <span class="more-metric">93% faster onboarding</span>
-        <span class="more-text">Built a modular Paycor-to-Active-Directory integration that handles onboarding, status changes, and offboarding as composable components.</span>
         <span class="more-expand">Read more &rarr;</span>
         <div class="more-panel">
           <ul><li>Automated the flow from Paycor (HRIS) into Active Directory and downstream systems using Logic Apps in a dedicated Azure resource group.</li>
@@ -741,7 +739,6 @@
       <div class="more-card reveal" tabindex="0" data-tags="Python,CData,SQL,Report Automation">
         <span class="more-title">Automated Month-End Reporting</span>
         <span class="more-metric">300+ analyst hours/month saved</span>
-        <span class="more-text">Python scripts using CData unified connectors to extract from 15 client accounting systems and produce formatted reports automatically.</span>
         <span class="more-expand">Read more &rarr;</span>
         <div class="more-panel">
           <ul><li>Previously, consultants manually pulled data from each client's accounting system (QuickBooks, Sage Intacct, etc.) into Excel, applied formulas, and formatted. Repeated every month for every client.</li>
@@ -754,7 +751,6 @@
       <div class="more-card reveal" tabindex="0" data-tags="Salesforce,NetSuite,AI Matching,Entity Resolution">
         <span class="more-title">AI Entity Resolution</span>
         <span class="more-metric">25% &rarr; 5% rejection rate</span>
-        <span class="more-text">Two-pass matching (deterministic lookup, then AI fuzzy matching) to resolve records between Salesforce and NetSuite where no shared key existed.</span>
         <span class="more-expand">Read more &rarr;</span>
         <div class="more-panel">
           <ul><li>No iPaaS tool (Celigo, Boomi, etc.) existed to integrate the CRM (Salesforce) and ERP (NetSuite). Records were supposed to be linked manually via an intake form, but people often skipped the step.</li>
@@ -768,7 +764,6 @@
       <div class="more-card reveal" tabindex="0" data-tags="Azure DevOps,Git,CI/CD,Python,YAML">
         <span class="more-title">CI/CD Pipeline from Scratch</span>
         <span class="more-metric">6 pipelines, 3 environments</span>
-        <span class="more-text">Azure DevOps with Git-integrated Fabric workspaces, approval gates, and a 5,400-line deployment engine handling cross-workspace artifact resolution.</span>
         <span class="more-expand">Read more &rarr;</span>
         <div class="more-panel">
           <ul><li>Azure DevOps with Git-integrated Fabric workspaces. Dev/Test/Prod branching strategy with approval gates at each promotion.</li>
@@ -781,7 +776,6 @@
       <div class="more-card reveal" tabindex="0" data-tags="Event-Driven,NetSuite,Pipeline Orchestration">
         <span class="more-title">Event-Driven Financial Reporting</span>
         <span class="more-metric">5-6 days &rarr; same day</span>
-        <span class="more-text">Pipeline detects closed accounting periods in NetSuite and triggers downstream reporting automatically. Reports are ready before anyone logs in.</span>
         <span class="more-expand">Read more &rarr;</span>
         <div class="more-panel">
           <ul><li>Old process had two bottlenecks: finance had to manually notify the data team that the month was closed (sometimes days late), then the team had to manually pull and combine reports.</li>
@@ -794,7 +788,6 @@
       <div class="more-card reveal" tabindex="0" data-tags="Terraform,Azure,IaC,Key Vault,Fabric">
         <span class="more-title">Infrastructure as Code (IaC)</span>
         <span class="more-metric">84 .tf files, 3 environments</span>
-        <span class="more-text">Terraform modules covering Fabric workspaces, Key Vault, service principals, Purview, and Power BI assignments. Zero hardcoded credentials.</span>
         <span class="more-expand">Read more &rarr;</span>
         <div class="more-panel">
           <ul><li>Modules cover: Fabric workspaces, warehouses (with binary collation for faster string comparisons), lakehouses, capacity units, Key Vault with 3 access policy variants, Azure AD service principals, storage accounts, user-managed identities, Purview, and Power BI workspace assignments.</li>
@@ -807,7 +800,6 @@
       <div class="more-card reveal" tabindex="0" data-tags="CData Conference,Data Integration,Public Speaking">
         <span class="more-title">Conference Talk: Data Integration at Scale</span>
         <span class="more-metric">CData Conference, 60+ attendees</span>
-        <span class="more-text">Presented how unified connectors replaced dozens of individual API integrations and accelerated report delivery across 15 client organizations.</span>
         <span class="more-expand">Read more &rarr;</span>
         <div class="more-panel">
           <ul><li>CData invited me to present because our use case was distinctive: nonprofits serving nonprofits, reporting across a dozen different client accounting platforms (QuickBooks, Sage Intacct, etc.).</li>
@@ -820,7 +812,6 @@
       <div class="more-card reveal" tabindex="0" data-tags="Power BI,Training,Self-Service,Workshops">
         <span class="more-title">Self-Service BI Training Program</span>
         <span class="more-metric">20+ users, 40% fewer ad-hoc requests</span>
-        <span class="more-text">Ran 8 workshops using live dashboards with real data. Sessions doubled as feedback rounds that shaped the final product.</span>
         <span class="more-expand">Read more &rarr;</span>
         <div class="more-panel">
           <ul><li>8 workshops over 2 weeks: 4 sessions, 2 groups of ~10 people each.</li>
@@ -927,15 +918,15 @@
             <div class="tl-roles">
               <div class="tl-role">
                 <div class="tl-role-head"><span class="tl-role-date">2022</span><span class="tl-role-title">Data Analyst</span><span class="tl-role-co">Kiwi Partners</span></div>
-                <p class="tl-role-desc">First data hire. Built the company's first gross-profit report, which flagged 37 unprofitable engagements nobody knew about. Created the revenue reconciliation system that recovered $200K. Automated month-end reporting across 15 client organizations, saving 300+ analyst hours/month.</p>
+                <p class="tl-role-desc">First data hire. Defined how the company measured profitability and built the reporting systems that leadership relied on for financial decisions. Automated the manual workflows that were eating analyst time every month-end.</p>
               </div>
               <div class="tl-role">
                 <div class="tl-role-head"><span class="tl-role-date">2023</span><span class="tl-role-title">Assoc. Director, Data Engineering &amp; Analytics</span><span class="tl-role-co">Arabella Advisors</span></div>
-                <p class="tl-role-desc">Hired and led a team of 8. Evaluated Fabric, Snowflake, and Databricks; chose Fabric. Architected the medallion-based data platform: 21 source systems consolidated, 125 pipelines across 3 environments, 400+ users. Built CI/CD from scratch (8 weeks), IaC with 17 Terraform modules, and a data governance framework (12 conformed dimensions, 10 fact tables, 36 KPIs).</p>
+                <p class="tl-role-desc">Hired and led a team to build the company's data platform from the ground up. Chose the architecture, stood up engineering practices from version control to CI/CD, and delivered governed data access to the entire organization.</p>
               </div>
               <div class="tl-role">
                 <div class="tl-role-head"><span class="tl-role-date">2025</span><span class="tl-role-title">Data Architect</span><span class="tl-role-co">Vital Impact Group</span></div>
-                <p class="tl-role-desc">Built the AI analytics layer: 7 MCP servers, 65 tools, 1,300+ queries/week at 94.5% success. The system identified $7.6M in unrealized billable capacity; the org used that data to secure $3M in new contracts. Designed 8-layer query security and 3-tier observability. Trained 20+ users on self-service analytics.</p>
+                <p class="tl-role-desc">Designed the AI analytics layer that let non-technical leaders query the warehouse directly. Built the security and governance framework underneath it, then trained the organization on self-service analytics.</p>
               </div>
             </div>
             <div class="tags"><span class="tag">Microsoft Fabric</span><span class="tag">PySpark</span><span class="tag">MCP</span><span class="tag">Power BI</span><span class="tag">Terraform</span><span class="tag">Leadership</span></div>
@@ -1058,7 +1049,7 @@
   var ctx = canvas.getContext("2d");
   var W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
   var running = false, rafId = null;
-  var gridSpacing = 40, traces = [], bars = [], gridNodes = [];
+  var tables = [], barGroups = [], dots = [];
 
   function sizeCanvas(){
     var r = canvas.parentNode.getBoundingClientRect();
@@ -1067,82 +1058,132 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
   function seed(){
-    traces = []; bars = []; gridNodes = [];
-    var cols = Math.ceil(W / gridSpacing) + 1;
-    var rows = Math.ceil(H / gridSpacing) + 1;
-    for (var r = 0; r < rows; r++){
-      for (var c = 0; c < cols; c++){
-        var x = c * gridSpacing, y = r * gridSpacing;
-        if (((c * 7 + r * 13) % 17) < 3){
-          gridNodes.push({x:x, y:y, pulse: ((c * 3 + r * 5) % 11) * 0.57, bright: ((c+r) % 5) === 0});
+    tables = []; barGroups = []; dots = [];
+    var tCount = Math.max(4, Math.min(8, Math.round((W * H) / 80000)));
+    for (var i = 0; i < tCount; i++){
+      var cols = 3 + ((i * 7) % 3);
+      var rows = 2 + ((i * 5) % 3);
+      var cw = 28 + ((i * 11) % 12);
+      var rh = 10;
+      var cells = [];
+      for (var r = 0; r < rows; r++){
+        for (var c = 0; c < cols; c++){
+          cells.push({r:r, c:c, filled: ((r * 7 + c * 13 + i * 3) % 5) === 0, gold: ((r + c + i) % 8) === 0});
         }
       }
+      tables.push({
+        x: ((i * 197 + 43) % 100) / 100 * W,
+        y: ((i * 131 + 71) % 100) / 100 * H,
+        cols: cols, rows: rows, cw: cw, rh: rh, cells: cells,
+        vx: 0.06 + ((i * 3) % 7) * 0.015,
+        vy: -0.01 + ((i * 5) % 9) * 0.005 - 0.02,
+        alpha: 0.06 + ((i * 3) % 5) * 0.02,
+        ph: i * 1.7
+      });
     }
-    var traceCount = Math.max(4, Math.min(8, Math.round(H / 120)));
-    for (var i = 0; i < traceCount; i++){
-      var pts = [];
-      var baseY = 80 + (i / traceCount) * (H - 160);
-      var segments = Math.ceil(W / 30) + 1;
-      for (var s = 0; s < segments; s++){
-        pts.push({
-          x: s * 30,
-          y: baseY + (((s * 7 + i * 13) % 19) - 9) * 3,
-          amp: 4 + ((s * 3 + i * 7) % 11),
-          ph: ((s * 5 + i * 3) % 17) * 0.37,
-          w: 0.0008 + ((i * 3 + s) % 7) * 0.0003
-        });
+    var bCount = Math.max(3, Math.min(7, Math.round(W / 180)));
+    for (var b = 0; b < bCount; b++){
+      var numBars = 3 + ((b * 7) % 3);
+      var brs = [];
+      for (var j = 0; j < numBars; j++){
+        brs.push({h: 12 + ((b * 13 + j * 17) % 30), ph: (b * 3 + j) * 0.8});
       }
-      traces.push({pts: pts, color: i < 2 ? "217,161,59" : (i < 4 ? "159,176,178" : "176,137,84"), alpha: 0.12 + ((i * 3) % 5) * 0.04});
+      barGroups.push({
+        x: ((b * 211 + 67) % 100) / 100 * W,
+        y: ((b * 157 + 31) % 100) / 100 * H,
+        bars: brs, bw: 6, gap: 3,
+        alpha: 0.08 + ((b * 3) % 4) * 0.03,
+        speed: 0.0005 + b * 0.0002
+      });
     }
-    var barCount = Math.max(3, Math.min(6, Math.round(W / 220)));
-    for (var b = 0; b < barCount; b++){
-      var bx = W * 0.55 + b * 60 + ((b * 17) % 30);
-      var bh = 30 + ((b * 37) % 60);
-      bars.push({x: bx, h: bh, w: 16, ph: b * 1.1, speed: 0.0006 + b * 0.0002});
+    var dCount = Math.max(20, Math.min(50, Math.round((W * H) / 18000)));
+    for (var d = 0; d < dCount; d++){
+      dots.push({
+        x: ((d * 173 + 29) % 100) / 100 * W,
+        y: ((d * 139 + 53) % 100) / 100 * H,
+        r: 1 + ((d * 7) % 3) * 0.5,
+        ph: d * 0.53,
+        gold: (d % 6) === 0
+      });
     }
   }
   function frame(t){
     ctx.clearRect(0, 0, W, H);
-    ctx.strokeStyle = "rgba(159,176,178,0.04)";
-    ctx.lineWidth = 0.5;
-    for (var gx = 0; gx < W; gx += gridSpacing){
-      ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke();
+    ctx.fillStyle = "rgba(159,176,178,0.025)";
+    for (var gx = 0; gx < W; gx += 50){
+      for (var gy = 0; gy < H; gy += 50){
+        ctx.fillRect(gx, gy, 1, 1);
+      }
     }
-    for (var gy = 0; gy < H; gy += gridSpacing){
-      ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke();
-    }
-    for (var n = 0; n < gridNodes.length; n++){
-      var nd = gridNodes[n];
-      var pulse = 0.5 + 0.5 * Math.sin(t * 0.001 + nd.pulse);
-      if (nd.bright){
-        ctx.fillStyle = "rgba(217,161,59," + (0.15 + pulse * 0.25) + ")";
-        ctx.beginPath(); ctx.arc(nd.x, nd.y, 2.2, 0, Math.PI * 2); ctx.fill();
+    for (var d = 0; d < dots.length; d++){
+      var dot = dots[d];
+      var pulse = 0.5 + 0.5 * Math.sin(t * 0.0008 + dot.ph);
+      if (dot.gold){
+        ctx.fillStyle = "rgba(217,161,59," + (0.1 + pulse * 0.2) + ")";
       } else {
-        ctx.fillStyle = "rgba(159,176,178," + (0.08 + pulse * 0.1) + ")";
-        ctx.beginPath(); ctx.arc(nd.x, nd.y, 1.2, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = "rgba(159,176,178," + (0.06 + pulse * 0.08) + ")";
+      }
+      ctx.beginPath(); ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 2); ctx.fill();
+    }
+    for (var i = 0; i < tables.length; i++){
+      var tb = tables[i];
+      tb.x += tb.vx;
+      tb.y += tb.vy;
+      var tw = tb.cols * tb.cw, th = (tb.rows + 1) * tb.rh;
+      if (tb.x > W + tw) tb.x = -tw - 20;
+      if (tb.x < -tw - 20) tb.x = W + tw;
+      if (tb.y > H + th) tb.y = -th - 20;
+      if (tb.y < -th - 20) tb.y = H + th;
+      var fadeIn = 0.5 + 0.5 * Math.sin(t * 0.0004 + tb.ph);
+      var a = tb.alpha * fadeIn;
+      ctx.strokeStyle = "rgba(159,176,178," + a + ")";
+      ctx.lineWidth = 0.5;
+      ctx.strokeRect(tb.x, tb.y, tw, th);
+      ctx.fillStyle = "rgba(159,176,178," + (a * 0.7) + ")";
+      ctx.fillRect(tb.x, tb.y, tw, tb.rh);
+      for (var c = 1; c < tb.cols; c++){
+        ctx.beginPath();
+        ctx.moveTo(tb.x + c * tb.cw, tb.y);
+        ctx.lineTo(tb.x + c * tb.cw, tb.y + th);
+        ctx.stroke();
+      }
+      for (var r = 0; r <= tb.rows; r++){
+        ctx.beginPath();
+        ctx.moveTo(tb.x, tb.y + (r + 1) * tb.rh);
+        ctx.lineTo(tb.x + tw, tb.y + (r + 1) * tb.rh);
+        ctx.stroke();
+      }
+      for (var ci = 0; ci < tb.cells.length; ci++){
+        var cell = tb.cells[ci];
+        if (cell.filled || cell.gold){
+          var cx = tb.x + cell.c * tb.cw + 3;
+          var cy = tb.y + (cell.r + 1) * tb.rh + 2;
+          var cfw = tb.cw * (0.3 + ((cell.c * 7 + cell.r * 3) % 5) * 0.12);
+          if (cell.gold){
+            ctx.fillStyle = "rgba(217,161,59," + (a * 2.5) + ")";
+          } else {
+            ctx.fillStyle = "rgba(159,176,178," + (a * 1.8) + ")";
+          }
+          ctx.fillRect(cx, cy + 2, cfw, 4);
+        }
       }
     }
-    for (var i = 0; i < traces.length; i++){
-      var tr = traces[i];
-      ctx.strokeStyle = "rgba(" + tr.color + "," + tr.alpha + ")";
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      for (var p = 0; p < tr.pts.length; p++){
-        var pt = tr.pts[p];
-        var py = pt.y + Math.sin(t * pt.w + pt.ph) * pt.amp;
-        if (p === 0) ctx.moveTo(pt.x, py); else ctx.lineTo(pt.x, py);
+    for (var b = 0; b < barGroups.length; b++){
+      var bg = barGroups[b];
+      for (var j = 0; j < bg.bars.length; j++){
+        var bar = bg.bars[j];
+        var bh = bar.h * (0.5 + 0.5 * Math.sin(t * bg.speed + bar.ph));
+        var bx = bg.x + j * (bg.bw + bg.gap);
+        ctx.fillStyle = "rgba(217,161,59," + bg.alpha + ")";
+        ctx.fillRect(bx, bg.y - bh, bg.bw, bh);
+        ctx.strokeStyle = "rgba(217,161,59," + (bg.alpha * 1.8) + ")";
+        ctx.lineWidth = 0.5;
+        ctx.strokeRect(bx, bg.y - bh, bg.bw, bh);
       }
-      ctx.stroke();
-    }
-    var barBase = H * 0.75;
-    for (var b = 0; b < bars.length; b++){
-      var bar = bars[b];
-      var bh = bar.h * (0.6 + 0.4 * Math.sin(t * bar.speed + bar.ph));
-      ctx.fillStyle = "rgba(217,161,59,0.07)";
-      ctx.fillRect(bar.x, barBase - bh, bar.w, bh);
-      ctx.strokeStyle = "rgba(217,161,59,0.15)";
-      ctx.lineWidth = 0.8;
-      ctx.strokeRect(bar.x, barBase - bh, bar.w, bh);
+      ctx.strokeStyle = "rgba(159,176,178," + (bg.alpha * 0.6) + ")";
+      ctx.lineWidth = 0.5;
+      var totalW = bg.bars.length * (bg.bw + bg.gap) - bg.gap;
+      ctx.beginPath(); ctx.moveTo(bg.x - 2, bg.y); ctx.lineTo(bg.x + totalW + 2, bg.y); ctx.stroke();
     }
     if (running) rafId = requestAnimationFrame(frame);
   }
