@@ -90,7 +90,7 @@
   .role-cycle{color:var(--gold);display:inline-block;min-width:20ch;transition:opacity .35s ease,transform .35s ease}
   .role-cycle.out{opacity:0;transform:translateY(-8px)}
   .role-cycle.in{opacity:1;transform:translateY(0)}
-  .hero-tag{margin-top:26px;max-width:52ch;font-family:var(--serif);font-size:clamp(1.05rem,2vw,1.3rem);color:var(--text-pale);line-height:1.5;animation:rise .8s .75s cubic-bezier(.2,.7,.2,1) both}
+  .hero-tag{margin-top:26px;font-family:var(--serif);font-size:clamp(1.05rem,2vw,1.3rem);color:var(--text-pale);line-height:1.5;text-align:justify;animation:rise .8s .75s cubic-bezier(.2,.7,.2,1) both}
   .portrait-wrap{position:relative;width:360px;height:360px;flex-shrink:0;animation:rise .9s .5s cubic-bezier(.2,.7,.2,1) both}
   .portrait-wrap::before{content:"";position:absolute;inset:-20px;border-radius:50%;background:linear-gradient(135deg,rgba(217,161,59,.18),rgba(159,176,178,.15));z-index:0}
   .hero-portrait{width:360px;height:360px;object-fit:cover;object-position:50% 20%;border-radius:50%;border:4px solid rgba(255,255,255,.85);box-shadow:0 8px 36px -8px rgba(217,161,59,.25),0 18px 50px -16px rgba(0,0,0,.45);position:relative;z-index:1}
@@ -164,7 +164,7 @@
   .dev-phase-panel.open{grid-template-rows:1fr}
   .dev-phase-panel-in{overflow:hidden}
   .dev-phase-panel-in ul{margin:0;padding:0 20px 18px 52px;list-style:none}
-  .dev-phase-panel-in li{padding:5px 0;font-size:.92rem;color:var(--text-soft);line-height:1.5;position:relative;padding-left:14px}
+  .dev-phase-panel-in li{padding:5px 0;font-size:.92rem;color:var(--text-soft);line-height:1.5;position:relative;padding-left:14px;text-align:justify}
   .dev-phase-panel-in li::before{content:"\00B7";position:absolute;left:0;color:var(--gold-deep);font-weight:700}
   @media(max-width:600px){
     .dev-phase-toggle{grid-template-columns:1fr auto;gap:4px 10px}
@@ -191,7 +191,7 @@
   .arch-btn[aria-pressed="true"]{background:rgba(217,161,59,.1);border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
   .arch-detail{background:var(--ink);border:1px solid rgba(217,161,59,.18);border-radius:8px;padding:26px}
   .arch-detail h4{font-family:var(--serif);font-weight:500;font-size:1.2rem;color:var(--gold);margin:0 0 12px}
-  .arch-detail p{color:var(--text-pale);max-width:62ch;margin:0 0 14px}
+  .arch-detail p{color:var(--text-pale);margin:0 0 14px;text-align:justify}
   .arch-stat{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--text-faint)}
   .trace-table-wrap{overflow-x:auto;margin-bottom:16px}
   .trace-table{border-collapse:collapse;width:100%;min-width:480px;font-family:var(--mono);font-size:.74rem}
@@ -267,11 +267,10 @@
   .more-modal-title{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;line-height:1.45;display:block;margin-top:8px;max-width:50ch}
   .more-modal-tags{padding:0 32px 20px;display:flex;flex-wrap:wrap;gap:8px}
   .more-modal-tags .tag{font-size:.68rem;color:var(--gold);border-color:rgba(217,161,59,.4)}
-  .more-modal-visual{margin:0 32px 20px;border:1px dashed rgba(217,161,59,.2);border-radius:8px;overflow:hidden;aspect-ratio:16/7;display:flex;align-items:center;justify-content:center;background:rgba(217,161,59,.03);color:var(--text-faint);font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
-  .more-modal-visual img{width:100%;height:100%;object-fit:cover}
+  /* .more-modal-visual — commented out until we add architecture diagrams */
   .more-modal-body{padding:0 32px 36px}
   .more-modal-body ul{margin:0;padding:0;list-style:none}
-  .more-modal-body li{padding:10px 0;font-size:.92rem;color:var(--text-pale);line-height:1.55;padding-left:16px;position:relative;border-bottom:1px solid rgba(217,161,59,.08)}
+  .more-modal-body li{padding:10px 0;font-size:.92rem;color:var(--text-pale);line-height:1.55;padding-left:16px;position:relative;border-bottom:1px solid rgba(217,161,59,.08);text-align:justify}
   .more-modal-body li:last-child{border-bottom:0}
   .more-modal-body li::before{content:"\00B7";position:absolute;left:0;color:var(--gold);font-weight:700}
   @media(max-width:560px){.more-modal-header{padding:28px 20px 16px}.more-modal-tags{padding:0 20px 16px}.more-modal-visual{margin:0 20px 16px}.more-modal-body{padding:0 20px 28px}}
@@ -305,7 +304,7 @@
   .tl-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
   .tl-panel.open{grid-template-rows:1fr}
   .tl-panel-in{overflow:hidden}
-  .tl-story{font-size:.95rem;color:var(--text-pale);max-width:56ch;padding:2px 0 10px}
+  .tl-story{font-size:.95rem;color:var(--text-pale);padding:2px 0 10px;text-align:justify}
   .tags{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:12px}
   .tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(217,161,59,.4);border-radius:999px;padding:3px 10px}
   .tl-static .tl-title{color:var(--text-pale)}
@@ -314,7 +313,7 @@
   .tl-role-date{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold);min-width:3ch}
   .tl-role-title{font-family:var(--serif);font-size:1rem;color:var(--paper)}
   .tl-role-co{font-size:.82rem;color:var(--text-faint)}
-  .tl-role-desc{font-size:.9rem;color:var(--text-pale);line-height:1.5;margin:0;max-width:56ch}
+  .tl-role-desc{font-size:.9rem;color:var(--text-pale);line-height:1.5;margin:0;text-align:justify}
   @media(max-width:600px){
     .tl::before{left:24px}
     .tl-item{grid-template-columns:44px 1fr}
@@ -332,15 +331,16 @@
   @media(max-width:700px){.opinions-grid{grid-template-columns:1fr}}
   .opinion-card{border:1px solid rgba(217,161,59,.24);border-radius:8px;padding:28px 26px}
   .opinion-stmt{font-family:var(--serif);font-size:1.3rem;color:var(--gold);margin:0 0 12px}
-  .opinion-support{font-size:.92rem;color:var(--text-pale);margin:0}
+  .opinion-support{font-size:.92rem;color:var(--text-pale);margin:0;text-align:justify}
 
   /* ============ LIFE ============ */
   .life{background:var(--ochre-card);padding:clamp(60px,8vw,90px) 0}
   .life-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-  .ph{position:relative;aspect-ratio:4/5;border:1.5px dashed var(--gold-deep);border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--gold-deep);font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:repeating-linear-gradient(-45deg,transparent,transparent 14px,rgba(154,100,20,.07) 14px,rgba(154,100,20,.07) 15px);text-align:center;padding:8px}
+  .ph{position:relative;aspect-ratio:4/5;border:1.5px solid rgba(154,100,20,.25);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--gold-deep);font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;background:linear-gradient(145deg,rgba(154,100,20,.06),rgba(154,100,20,.02));text-align:center;padding:12px}
   .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
   .ph span{position:relative;z-index:0}
-  .life-note{margin-top:20px;font-size:.9rem;color:var(--text-soft);max-width:60ch}
+  .ph svg{width:48px;height:48px;opacity:.7;z-index:0}
+  .life-note{margin-top:20px;font-size:.9rem;color:var(--text-soft);text-align:justify}
   @media(max-width:820px){.life-grid{grid-template-columns:repeat(3,1fr)}}
   @media(max-width:480px){.life-grid{grid-template-columns:repeat(2,1fr)}}
 
@@ -348,7 +348,7 @@
   .contact{background:var(--ink-deep);padding:130px 0 110px;color:var(--text-pale)}
   .contact .eyebrow{color:var(--gold)}
   .contact h2{color:var(--paper);font-size:clamp(2.2rem,5.5vw,3.6rem);max-width:18ch;margin:16px 0 26px}
-  .contact p{max-width:56ch;font-size:1.1rem;color:var(--text-pale)}
+  .contact p{font-size:1.1rem;color:var(--text-pale);text-align:justify}
   .contact .roles{color:var(--text-faint);font-size:.98rem}
   .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:44px}
   .cta{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-radius:999px;padding:14px 26px;border:1px solid var(--teal-mid);color:var(--text-pale);transition:border-color .2s,background .2s}
@@ -647,9 +647,9 @@
         <div class="chat-card">
           <div class="chat-head"><span class="chat-diamond" aria-hidden="true"></span><span>ask-the-data</span></div>
           <div class="chat-chips" role="group" aria-label="Sample questions">
-            <button class="chip" data-q="util" aria-pressed="false">Who's underutilized this quarter?</button>
-            <button class="chip" data-q="rev" aria-pressed="false">How much did we close last month?</button>
-            <button class="chip" data-q="margin" aria-pressed="false">Which projects are losing money?</button>
+            <button class="chip" data-q="util" aria-pressed="false">Which teams are below target?</button>
+            <button class="chip" data-q="rev" aria-pressed="false">Break down last month's revenue</button>
+            <button class="chip" data-q="margin" aria-pressed="false">Flag at-risk engagements</button>
           </div>
           <div class="chat-thread" id="chatThread" aria-live="polite">
             <p class="chat-empty">Pick a question above. The answer shows up here, the way it did for the people who used the real thing.</p>
@@ -830,7 +830,7 @@
           <span class="more-modal-title" id="mmTitle"></span>
         </div>
         <div class="more-modal-tags" id="mmTags"></div>
-        <div class="more-modal-visual" id="mmVisual"><span>Screenshot placeholder</span></div>
+        <!-- visual placeholder: will add architecture diagrams later -->
         <div class="more-modal-body" id="mmBody"></div>
       </div>
     </div>
@@ -971,12 +971,12 @@
   <div class="wrap">
     <div class="sec-head"><h2>Life outside the warehouse</h2></div>
     <div class="life-grid">
-      <div class="ph"><img src="assets/life/cooking.jpg" alt="Cooking for a crowd" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Cooking</span></div>
-      <div class="ph"><img src="assets/life/cocktails.jpg" alt="Mixing cocktails" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Cocktails</span></div>
-      <div class="ph"><img src="assets/life/boxing.jpg" alt="Boxing" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Boxing</span></div>
-      <div class="ph"><img src="assets/life/shows.jpg" alt="At a live show" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Shows</span></div>
-      <div class="ph"><img src="assets/life/friends.jpg" alt="With friends" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Friends</span></div>
-      <div class="ph"><img src="assets/life/food.jpg" alt="Food" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Food</span></div>
+      <div class="ph"><img src="assets/life/cooking.jpg" alt="Cooking for a crowd" loading="lazy" onerror="this.style.display='none'"><svg viewBox="0 0 48 48" fill="none" stroke="var(--gold-deep)" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M14 34h20M16 34v-8a8 8 0 0 1 16 0v8"/><path d="M24 26v-6M20 14c0-2 1-4 4-4s4 2 4 4" opacity=".5"/><path d="M18 12c-1-3 0-5 2-6M24 10c0-3 1-5 3-6M30 12c1-3 0-5-2-6" stroke-dasharray="2 2" opacity=".4"/></svg><span>Cooking</span></div>
+      <div class="ph"><img src="assets/life/cocktails.jpg" alt="Mixing cocktails" loading="lazy" onerror="this.style.display='none'"><svg viewBox="0 0 48 48" fill="none" stroke="var(--gold-deep)" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M16 10h16l-8 16v10M18 36h12"/><path d="M18 18h12" opacity=".4"/><circle cx="32" cy="12" r="2" opacity=".5"/><path d="M34 12l3-3" opacity=".4"/></svg><span>Cocktails</span></div>
+      <div class="ph"><img src="assets/life/boxing.jpg" alt="Boxing" loading="lazy" onerror="this.style.display='none'"><svg viewBox="0 0 48 48" fill="none" stroke="var(--gold-deep)" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M14 28c0-4 2-6 5-6h2c3 0 5 2 5 5v5c0 2-1 4-4 4h-4c-3 0-4-2-4-4v-4z"/><path d="M26 27c0-4 2-6 5-6h1c3 0 4 2 4 5v4c0 2-1 4-3 4h-3c-3 0-4-2-4-4v-3z"/><path d="M19 22v-4M31 21v-4" opacity=".4"/><path d="M16 16l3-4M28 15l3-4" stroke-dasharray="2 2" opacity=".3"/></svg><span>Boxing</span></div>
+      <div class="ph"><img src="assets/life/shows.jpg" alt="At a live show" loading="lazy" onerror="this.style.display='none'"><svg viewBox="0 0 48 48" fill="none" stroke="var(--gold-deep)" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M20 36V18l16-6v18"/><ellipse cx="17" cy="36" rx="3" ry="2"/><ellipse cx="33" cy="30" rx="3" ry="2"/><path d="M20 24l16-6" opacity=".3"/></svg><span>Shows</span></div>
+      <div class="ph"><img src="assets/life/friends.jpg" alt="With friends" loading="lazy" onerror="this.style.display='none'"><svg viewBox="0 0 48 48" fill="none" stroke="var(--gold-deep)" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="16" r="4"/><path d="M16 34c0-5 3.6-8 8-8s8 3 8 8"/><circle cx="36" cy="18" r="3" opacity=".5"/><path d="M38 34c0-4-2-6-5-7" opacity=".4"/><circle cx="12" cy="18" r="3" opacity=".5"/><path d="M10 34c0-4 2-6 5-7" opacity=".4"/></svg><span>Friends</span></div>
+      <div class="ph"><img src="assets/life/food.jpg" alt="Food" loading="lazy" onerror="this.style.display='none'"><svg viewBox="0 0 48 48" fill="none" stroke="var(--gold-deep)" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="26" r="10"/><circle cx="24" cy="26" r="6" opacity=".4"/><path d="M14 16l2-4M20 13l1-4M26 12l0-4M32 13l1-4M34 16l2-3" stroke-dasharray="2 2" opacity=".3"/><path d="M10 38h28" opacity=".3"/></svg><span>Food</span></div>
     </div>
     <p class="life-note">On weekends I'm usually cooking for a crowd. The rest of the time I'm boxing, mixing drinks, or chasing restaurants and live shows around the city.</p>
   </div>
@@ -1266,7 +1266,6 @@
     mmTitle.textContent = metric ? metric.textContent : "";
     mmTags.innerHTML = tags.map(function(t){ return '<span class="tag">' + t.trim() + '</span>'; }).join("");
     mmBody.innerHTML = panel ? panel.innerHTML : "";
-    mmVisual.innerHTML = "<span>Screenshot placeholder</span>";
     moreOverlay.hidden = false;
     document.body.style.overflow = "hidden";
     moreCloseBtn.focus();
@@ -1362,22 +1361,22 @@
   try {
   var chatAnswers = {
     util: {
-      num: "$7.6M",
-      text: "12 people are tracking well below target. Closing the gap is about $7.6M in billable capacity.",
-      head: ["Role", "Utilization"],
-      rows: [["Level 3 Advisory","45%"],["Level 2 Delivery","52%"],["Level 4 Strategy","58%"]]
+      num: "4 of 8",
+      text: "Four business units are below their quarterly utilization target. Corporate Strategy is the biggest gap at 45%.",
+      head: ["Business unit", "Utilization"],
+      rows: [["Corporate Strategy","45%"],["Program Delivery","62%"],["Client Advisory","68%"]]
     },
     rev: {
       num: "$4.2M",
-      text: "Recognized revenue came in at $4.2M, up 9% on the prior month.",
+      text: "Recognized revenue came in at $4.2M, up 9% on the prior month. Consulting drove most of the growth.",
       head: ["Line of business", "Closed"],
       rows: [["Consulting","$2.1M"],["Fiscal sponsorship","$1.4M"],["Advisory","$0.7M"]]
     },
     margin: {
-      num: "37",
-      text: "37 engagements are below a healthy margin. Here are the three worst.",
+      num: "3",
+      text: "Three engagements have margins below 15% and are at risk of missing their GP targets this quarter.",
       head: ["Engagement", "GP %"],
-      rows: [["Project Aster","-4%"],["Project Vale","11%"],["Project Nimbus","18%"]]
+      rows: [["Project Aster","-4%"],["Project Vale","11%"],["Project Nimbus","14%"]]
     }
   };
   var chatThread = document.getElementById("chatThread");
@@ -1459,9 +1458,9 @@
     {label:"Opinions", type:"section", target:"#opinions"},
     {label:"Life", type:"section", target:"#life"},
     {label:"Contact", type:"section", target:"#contact"},
-    {label:"Who's underutilized this quarter?", type:"ask", key:"util"},
-    {label:"How much did we close last month?", type:"ask", key:"rev"},
-    {label:"Which projects are losing money?", type:"ask", key:"margin"}
+    {label:"Which teams are below target?", type:"ask", key:"util"},
+    {label:"Break down last month's revenue", type:"ask", key:"rev"},
+    {label:"Flag at-risk engagements", type:"ask", key:"margin"}
   ];
   var overlay = document.getElementById("cmdkOverlay");
   var cmdInput = document.getElementById("cmdkInput");
@@ -1590,5 +1589,6 @@
   } catch(e){}
 })();
 </script>
+<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </body>
 </html>
