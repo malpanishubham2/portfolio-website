@@ -254,7 +254,6 @@
   .more-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px -8px rgba(0,0,0,.3)}
   .more-title{display:block;font-family:var(--serif);font-size:1.15rem;color:var(--paper);line-height:1.3}
   .more-metric{display:block;margin-top:6px;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--gold);text-transform:uppercase}
-  .more-text{display:block;margin-top:8px;font-size:.86rem;color:var(--aubergine-text);line-height:1.5}
   .more-expand{display:block;margin-top:12px;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);opacity:.5;transition:opacity .2s}
   .more-card:hover .more-expand{opacity:1}
   .more-panel{display:none}
@@ -446,7 +445,7 @@
 
 <section class="about" id="about">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">About</span><h2>The short version</h2></div>
+    <div class="sec-head"><h2>The short version</h2></div>
     <div class="about-copy">
       <p>I'm a data engineer and architect in New York. For five years I've built the infrastructure underneath other people's dashboards: the warehouses and pipelines that determine whether a number can be trusted.</p>
       <p>I grew up in Mumbai, did my Master of Science in Information Management with a Certificate in Data Science at Syracuse, and have spent the years since building data platforms for professional services and nonprofit firms. I like owning the full lifecycle of a data problem, from the architecture decision to the team standup where someone asks why two reports show different numbers.</p>
@@ -840,7 +839,7 @@
 
 <section class="projects" id="projects">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Projects</span><h2>Things I built for myself</h2></div>
+    <div class="sec-head"><h2>Things I built for myself</h2></div>
     <div class="projects-grid">
       <article class="proj-card reveal">
         <h3>Humanizer web app</h3>
@@ -867,7 +866,7 @@
 
 <section class="timeline" id="timeline">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Timeline</span><h2>How I got here</h2></div>
+    <div class="sec-head"><h2>How I got here</h2></div>
     <ol class="tl">
       <li class="tl-item">
         <span class="tl-year">2020</span><span class="tl-dot"></span>
@@ -946,7 +945,7 @@
 
 <section class="opinions" id="opinions">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Opinions</span><h2>Things I'll defend in an interview</h2></div>
+    <div class="sec-head"><h2>Things I'll defend in an interview</h2></div>
     <div class="opinions-grid">
       <div class="opinion-card reveal">
         <p class="opinion-stmt">Flag it, never delete it.</p>
@@ -970,7 +969,7 @@
 
 <section class="life" id="life">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Off the clock</span><h2>Life outside the warehouse</h2></div>
+    <div class="sec-head"><h2>Life outside the warehouse</h2></div>
     <div class="life-grid">
       <div class="ph"><img src="assets/life/cooking.jpg" alt="Cooking for a crowd" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Cooking</span></div>
       <div class="ph"><img src="assets/life/cocktails.jpg" alt="Mixing cocktails" loading="lazy" onerror="this.style.display='none'"><span aria-hidden="true">Cocktails</span></div>
@@ -985,7 +984,6 @@
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <span class="eyebrow">Contact</span>
     <h2>Got an ambiguous data problem? That's my favorite kind.</h2>
     <p>I'm looking for a team with real data problems that wants someone to own them end to end.</p>
     <p class="roles">Open to Senior Data Engineer, Data Architect, AI + Data Engineer, or Analytics Engineer.</p>
@@ -1262,7 +1260,6 @@
   function openMoreModal(card){
     var title = card.querySelector(".more-title").textContent;
     var metric = card.querySelector(".more-metric");
-    var text = card.querySelector(".more-text").textContent;
     var panel = card.querySelector(".more-panel");
     var tags = (card.getAttribute("data-tags") || "").split(",").filter(Boolean);
     mmNum.innerHTML = title;
