@@ -358,6 +358,7 @@
   footer{background:var(--ink-deep);border-top:1px solid rgba(217,161,59,.15);padding:26px 0;color:var(--text-faint);font-family:var(--mono);font-size:.66rem;letter-spacing:.1em}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
   .cmdk-hint{color:var(--text-faint)}
+  @media(max-width:768px){.cmdk-hint{display:none}}
   .cmdk-key{border:1px solid rgba(217,161,59,.4);border-radius:3px;padding:1px 6px;font-family:var(--mono);color:var(--gold);margin:0 3px;font-size:.9em}
 
   /* ============ COMMAND PALETTE ============ */
@@ -372,6 +373,14 @@
   .cmdk-results button .cmdk-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-faint)}
   .cmdk-results button:hover,.cmdk-results button.active{background:rgba(217,161,59,.12);color:var(--paper)}
   .cmdk-empty{padding:16px 14px;color:var(--text-faint);font-size:.85rem}
+
+  @media(max-width:768px){
+    .hero-tag,.about-copy p,.proj-story,.dev-phase-panel-in li,.arch-detail p,.mcp-text p,
+    .more-modal-body li,.tl-story,.tl-role-desc,.opinion-support,.life-note,.contact p{text-align:left}
+  }
+  .nav-links a.active{color:var(--gold)}
+  .journey-map{display:block;width:100%;max-width:660px;margin:0 auto 32px;height:auto;opacity:.85}
+  @media(max-width:768px){.journey-map{display:none}}
 
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -446,9 +455,50 @@
 <section class="about" id="about">
   <div class="wrap">
     <div class="sec-head"><h2>The short version</h2></div>
+    <svg class="journey-map" viewBox="0 0 660 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Journey from Mumbai to Syracuse to New York">
+      <line x1="95" y1="62" x2="260" y2="62" stroke="var(--gold)" stroke-width="1" stroke-dasharray="6 4" opacity=".45"/>
+      <circle cx="140" cy="62" r="1.5" fill="var(--gold)" opacity=".35"/>
+      <circle cx="180" cy="62" r="1.5" fill="var(--gold)" opacity=".35"/>
+      <circle cx="220" cy="62" r="1.5" fill="var(--gold)" opacity=".35"/>
+      <line x1="390" y1="62" x2="545" y2="62" stroke="var(--gold)" stroke-width="1" stroke-dasharray="6 4" opacity=".45"/>
+      <circle cx="430" cy="62" r="1.5" fill="var(--gold)" opacity=".35"/>
+      <circle cx="470" cy="62" r="1.5" fill="var(--gold)" opacity=".35"/>
+      <circle cx="510" cy="62" r="1.5" fill="var(--gold)" opacity=".35"/>
+      <g transform="translate(55,10)">
+        <rect x="-12" y="28" width="24" height="34" rx="1.5" fill="none" stroke="var(--gold-deep)" stroke-width="1.2"/>
+        <path d="M-12 28 Q0 12 12 28" fill="none" stroke="var(--gold-deep)" stroke-width="1.2"/>
+        <rect x="-17" y="44" width="5" height="18" rx="1" fill="none" stroke="var(--gold-deep)" stroke-width=".9"/>
+        <rect x="12" y="44" width="5" height="18" rx="1" fill="none" stroke="var(--gold-deep)" stroke-width=".9"/>
+        <line x1="-4" y1="36" x2="-4" y2="60" stroke="var(--gold-deep)" stroke-width=".6" opacity=".4"/>
+        <line x1="4" y1="36" x2="4" y2="60" stroke="var(--gold-deep)" stroke-width=".6" opacity=".4"/>
+        <line x1="-20" y1="62" x2="20" y2="62" stroke="var(--gold-deep)" stroke-width="1"/>
+        <text x="0" y="82" text-anchor="middle" fill="var(--gold-deep)" font-family="var(--mono)" font-size="9" letter-spacing=".1em">MUMBAI</text>
+      </g>
+      <g transform="translate(330,10)">
+        <rect x="-20" y="32" width="40" height="30" rx="2" fill="none" stroke="var(--gold-deep)" stroke-width="1.1"/>
+        <path d="M-20 32 Q0 10 20 32" fill="none" stroke="var(--gold-deep)" stroke-width="1.2"/>
+        <line x1="0" y1="10" x2="0" y2="4" stroke="var(--gold-deep)" stroke-width=".9"/>
+        <circle cx="0" cy="2" r="1.5" fill="var(--gold-deep)" opacity=".6"/>
+        <line x1="-8" y1="42" x2="-8" y2="60" stroke="var(--gold-deep)" stroke-width=".5" opacity=".3"/>
+        <line x1="0" y1="42" x2="0" y2="60" stroke="var(--gold-deep)" stroke-width=".5" opacity=".3"/>
+        <line x1="8" y1="42" x2="8" y2="60" stroke="var(--gold-deep)" stroke-width=".5" opacity=".3"/>
+        <line x1="-24" y1="62" x2="24" y2="62" stroke="var(--gold-deep)" stroke-width="1"/>
+        <text x="0" y="82" text-anchor="middle" fill="var(--gold-deep)" font-family="var(--mono)" font-size="9" letter-spacing=".1em">SYRACUSE</text>
+      </g>
+      <g transform="translate(600,10)">
+        <rect x="-32" y="24" width="11" height="38" rx="1" fill="none" stroke="var(--gold-deep)" stroke-width="1.1"/>
+        <rect x="-16" y="14" width="13" height="48" rx="1" fill="rgba(217,161,59,.06)" stroke="var(--gold-deep)" stroke-width="1.2"/>
+        <line x1="-9.5" y1="14" x2="-9.5" y2="6" stroke="var(--gold-deep)" stroke-width=".8"/>
+        <rect x="2" y="30" width="10" height="32" rx="1" fill="none" stroke="var(--gold-deep)" stroke-width="1"/>
+        <rect x="16" y="20" width="12" height="42" rx="1" fill="none" stroke="var(--gold-deep)" stroke-width="1.1"/>
+        <line x1="22" y1="20" x2="22" y2="12" stroke="var(--gold-deep)" stroke-width=".7"/>
+        <line x1="-36" y1="62" x2="32" y2="62" stroke="var(--gold-deep)" stroke-width="1"/>
+        <text x="0" y="82" text-anchor="middle" fill="var(--gold-deep)" font-family="var(--mono)" font-size="9" letter-spacing=".1em">NEW YORK</text>
+      </g>
+    </svg>
     <div class="about-copy">
       <p>I'm a data engineer and architect in New York. For five years I've built the infrastructure underneath other people's dashboards: the warehouses and pipelines that determine whether a number can be trusted.</p>
-      <p>I grew up in Mumbai, did my Master of Science in Information Management with a Certificate in Data Science at Syracuse, and have spent the years since building data platforms for professional services and nonprofit firms. I like owning the full lifecycle of a data problem, from the architecture decision to the team standup where someone asks why two reports show different numbers.</p>
+      <p>I grew up in Mumbai, studied data science at Syracuse, and have spent the years since building data platforms for professional services and nonprofit firms. I like owning the full lifecycle of a data problem, from the architecture decision to the team standup where someone asks why two reports show different numbers.</p>
       <p>Outside work I cook for a crowd, box a few mornings a week, make a decent cocktail, and go to more shows than my calendar can afford.</p>
     </div>
   </div>
@@ -467,7 +517,7 @@
       <button class="proj-tab" role="tab" aria-selected="false" aria-controls="proj-02" id="tab-02">
         <span class="tab-num">02 &middot; AI + Data</span>
         <span class="tab-title">The AI analytics layer, and the $7.6M it found.</span>
-        <span class="tab-sub">7 MCP servers, 65 tools, 1,300+ queries/week</span>
+        <span class="tab-sub">7 MCP servers, 65 tools, 13,000+ queries/week</span>
       </button>
     </div>
 
@@ -631,7 +681,7 @@
         <span class="proj-num">02</span><span class="proj-cat">AI + Data</span>
         <h3>The AI analytics layer, and the $7.6M it found.</h3>
         <p class="proj-story">Once the warehouse was running, the next problem was access. Non-technical leaders (the CFO, LOB heads) still couldn't get answers without asking the data team. Dashboards handled standard questions, but anything ad-hoc required someone who knew SQL.</p>
-        <p class="proj-story">I built an AI analytics layer on top of the warehouse using MCP servers and Claude. One server per data mart, each with access to its domain's schema and business context. Users ask questions in natural language, the model writes the SQL, and the answer comes back with the data behind it. The system handles 1,300+ queries a week at a 94.5% success rate.</p>
+        <p class="proj-story">I built an AI analytics layer on top of the warehouse using MCP servers and Claude. One server per data mart, each with access to its domain's schema and business context. Users ask questions in natural language, the model writes the SQL, and the answer comes back with the data behind it. The system handles 13,000+ queries a week at a 94.5% success rate.</p>
         <p class="proj-story">The $7.6M came from asking a question nobody had thought to ask: how much billable capacity was the firm leaving on the table? The number was high enough that I assumed the AI was wrong. I validated everything by hand in raw SQL. The numbers held. The org used that data to reallocate staff and secure about $3M in new contracts.</p>
         <div class="stat-bar">
           <table class="stat-table"><tr>
@@ -663,7 +713,7 @@
             <div class="mcp-text">
               <p><strong>Architecture.</strong> One MCP server per data mart: utilization, revenue, HR, contracts, and so on. Each server knows its domain's schema and the business context behind the columns (what "LOB_A" maps to in the real org, which join keys to use, which names map to which entities). Claude connects to all of them and routes each question to the right server.</p>
               <p><strong>Two-tool pattern.</strong> Each server started with six tools. Usage logs showed that Claude almost always did two things: check the schema, then write SQL. The other four added token overhead without value. Cutting to two tools per server made the model more accurate, not less.</p>
-              <p><strong>Security.</strong> Every query passes through 8 validation layers before it touches the warehouse: input validation, read-only enforcement, table whitelisting, CTE-aware parsing, automatic row limits, query timeouts, read-only tool annotations, and hand-authored schema context. The model can read data. It cannot write, delete, or access tables outside its whitelist.</p>
+              <p><strong>Security.</strong> Every query passes through 8 validation layers before it touches the warehouse. The model can read data, not write or delete it, and only within tables it has been given access to.</p>
               <p><strong>Observability.</strong> Three-tier logging: a markdown file for humans, structured JSONL for scripts, and a SQLite archive for historical analysis. Weekly automated scans check for schema drift and query patterns.</p>
             </div>
             <div class="mcp-diagram">
@@ -953,7 +1003,7 @@
       </div>
       <div class="opinion-card reveal">
         <p class="opinion-stmt">Human in the loop, always.</p>
-        <p class="opinion-support">When we started with AI analytics, we validated every significant finding by hand in raw SQL. Over time, query logs showed us what people actually asked, which questions the model handled well, and where it struggled. That feedback loop made the system better, but it started with not trusting the output until we'd earned the right to. Same principle on the entity resolution layer: AI proposes matches, but a domain owner reviews them before anything hits the warehouse. Trust is built incrementally.</p>
+        <p class="opinion-support">When we started with AI analytics, we validated every significant finding by hand in raw SQL. Over time, query logs showed us what people actually asked, which questions the model handled well, and where it struggled. That feedback loop made the system better, but it started with not trusting the output until we'd earned the right to. Trust is built incrementally.</p>
       </div>
       <div class="opinion-card reveal">
         <p class="opinion-stmt">Move only what changed.</p>
@@ -1039,6 +1089,18 @@
       });
     });
   }
+  var navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+  var spySections = document.querySelectorAll('section[id]');
+  var spyObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        navAnchors.forEach(function(a){ a.classList.remove('active'); });
+        var match = document.querySelector('.nav-links a[href="#'+entry.target.id+'"]');
+        if(match && !match.classList.contains('nav-contact')) match.classList.add('active');
+      }
+    });
+  },{rootMargin:'-40% 0px -60% 0px',threshold:0});
+  spySections.forEach(function(s){ spyObs.observe(s); });
   } catch(e){ console.warn("Nav init failed:", e); }
 
   /* hero canvas */
@@ -1361,8 +1423,8 @@
   try {
   var chatAnswers = {
     util: {
-      num: "4 of 8",
-      text: "Four business units are below their quarterly utilization target. Corporate Strategy is the biggest gap at 45%.",
+      num: "3 of 8",
+      text: "Three business units are below their quarterly utilization target. Corporate Strategy is the biggest gap at 45%.",
       head: ["Business unit", "Utilization"],
       rows: [["Corporate Strategy","45%"],["Program Delivery","62%"],["Client Advisory","68%"]]
     },
@@ -1393,7 +1455,7 @@
 
   function trimExchanges(){
     var existing = chatThread.querySelectorAll(".exchange");
-    if (existing.length >= 2) existing[0].remove();
+    existing.forEach(function(ex){ ex.remove(); });
   }
 
   function appendExchange(qText, a){
@@ -1589,6 +1651,5 @@
   } catch(e){}
 })();
 </script>
-<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </body>
 </html>
