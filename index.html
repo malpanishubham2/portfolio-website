@@ -214,9 +214,8 @@
   .trace-chip{font-family:var(--mono);font-size:.72rem;color:var(--ink-deep);background:var(--gold);border-radius:999px;padding:6px 14px}
   .trace-jump{display:inline-block;margin-top:4px;font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(217,161,59,.4)}
   .trace-jump:hover{border-color:var(--gold)}
-  .trace-panel{opacity:0;overflow:hidden;transition:opacity .3s ease}
-  .trace-panel[hidden]{display:none}
-  .trace-panel.visible{opacity:1}
+  .trace-panel{display:none;opacity:0;overflow:hidden}
+  .trace-panel.visible{display:block;opacity:1;animation:panelIn .3s ease both}
 
   /* chat demo (project 02) */
   .chat-card{background:var(--ink-deep);border:1px solid rgba(217,161,59,.25);border-radius:10px;overflow:hidden}
@@ -449,7 +448,7 @@
       <span class="eyebrow">Data Engineer &amp; Architect &nbsp;&middot;&nbsp; New York, NY</span>
       <h1><span class="nw">Shubham</span> <span class="nw">Malpani</span></h1>
       <div class="role-line">Open to <span class="role-cycle in" id="roleCycle">Senior Data Engineer</span></div>
-      <p class="hero-tag">I make data a strategic business asset. I build the governed platforms and the AI layers on top of them so that everyone in an organization, regardless of technical skill, has the information they need to do their work well and leadership makes sharper calls.</p>
+      <p class="hero-tag">Data and AI leader with five years turning data into a strategic asset. I build the governed platforms and the AI layers that sit on top of them, so everyone in an organization, whatever their technical skill, has what they need to do their work well and make more informed decisions.</p>
       <div class="cta-row" style="margin-top:28px">
         <a class="cta primary" href="mailto:shubham.malpani@gmail.com">Email me</a>
         <a class="cta" href="resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
@@ -1446,21 +1445,18 @@
   try {
   var traceBtns = document.querySelectorAll('#proj-01 .arch-btn');
   var tracePanels = document.querySelectorAll('#proj-01 .trace-panel');
-  var traceTimers = {};
   traceBtns.forEach(function(btn){
     btn.addEventListener("click", function(){
       traceBtns.forEach(function(b){ b.setAttribute("aria-pressed", "false"); });
       btn.setAttribute("aria-pressed", "true");
       var key = btn.getAttribute("data-k");
       tracePanels.forEach(function(p){
-        var pk = p.getAttribute("data-panel");
-        if (traceTimers[pk]) { clearTimeout(traceTimers[pk]); traceTimers[pk] = null; }
-        if (pk === key){
+        if (p.getAttribute("data-panel") === key){
           p.removeAttribute("hidden");
-          requestAnimationFrame(function(){ p.classList.add("visible"); });
+          p.classList.add("visible");
         } else {
           p.classList.remove("visible");
-          traceTimers[pk] = setTimeout(function(){ p.setAttribute("hidden",""); traceTimers[pk] = null; }, 400);
+          p.setAttribute("hidden","");
         }
       });
     });
